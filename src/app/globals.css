@@ -44,7 +44,7 @@
 }
 
 body {
-  font-family: Sen, sans-serif, Domine, serif;
+  font-family: Sen, Domine, Outfit;
 }
 
 :root {
@@ -123,4 +123,38 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom checkbox styling to ensure green checkmark is white */
+[data-state="checked"] .lucide-check {
+  color: white !important;
+  fill: white !important;
+}
+
+/* Custom checkbox to override default primary colors */
+.checkbox-green[data-state="checked"] {
+  background-color: #16a34a !important;
+  border-color: #16a34a !important;
+  color: white !important;
+}
+
+.checkbox-green[data-state="checked"] svg {
+  color: white !important;
+}
+
+/* Radio button styling to ensure green background and white indicator */
+[data-state="checked"] .lucide-circle {
+  fill: white !important;
+  color: white !important;
+}
+
+/* Ensure radio button indicator is visible */
+[data-slot="radio-group-item"][data-state="checked"] {
+  background-color: #16a34a !important;
+  border-color: #16a34a !important;
+}
+
+[data-slot="radio-group-item"][data-state="checked"] svg {
+  fill: white !important;
+  color: white !important;
 }

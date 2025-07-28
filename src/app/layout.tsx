@@ -16,9 +16,9 @@ export const metadata: Metadata = {
   title: "Agristato",
   description: "Transforme dados do solo em decisões inteligentes",
   icons: {
-    icon: '/logo.svg',
-    shortcut: '/logo.svg',
-    apple: '/logo.svg',
+    icon: "/logo.svg",
+    shortcut: "/logo.svg",
+    apple: "/logo.svg",
   },
 };
 

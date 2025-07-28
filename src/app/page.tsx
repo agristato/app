@@ -1,6 +1,110 @@
+"use client";
+
+import { SuccessModal } from "@/components/SuccessModal";
+import { SurveyModal } from "@/components/SurveyModal";
+import { ThankYouModal } from "@/components/ThankYouModal";
+import { api } from "@/lib/api";
+import { EmailFormData, emailSchema, SurveyFormData } from "@/lib/validations";
+import { User } from "@/types/survey";
+import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [showSurveyModal, setShowSurveyModal] = useState(false);
+  const [showThankYouModal, setShowThankYouModal] = useState(false);
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
+  const [userCount, setUserCount] = useState(0);
+  const [isLoadingCount, setIsLoadingCount] = useState(true);
+
+  const updateUserCount = async () => {
+    try {
+      setIsLoadingCount(true);
+      const count = await api.getUserCount();
+      setUserCount(count + 189);
+    } catch (error) {
+      console.error("Error updating user count:", error);
+
+      setUserCount(189);
+    } finally {
+      setIsLoadingCount(false);
+    }
+  };
+
+  useEffect(() => {
+    updateUserCount();
+  }, []);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<EmailFormData>({
+    resolver: zodResolver(emailSchema),
+  });
+
+  const onEmailSubmit = async (data: EmailFormData) => {
+    setIsLoading(true);
+    try {
+      const user = await api.createUser(data.email);
+      if (user) {
+        setCurrentUser(user);
+        setShowSuccessModal(true);
+        reset();
+      }
+    } catch (error) {
+      console.error("Error creating user:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleCloseSuccessModal = () => {
+    setShowSuccessModal(false);
+    setCurrentUser(null);
+    reset();
+    updateUserCount();
+  };
+
+  const handleCloseSurveyModal = () => {
+    setShowSurveyModal(false);
+    setCurrentUser(null);
+    reset();
+    updateUserCount();
+  };
+
+  const handleCloseThankYouModal = () => {
+    setShowThankYouModal(false);
+    setCurrentUser(null);
+    reset();
+    updateUserCount();
+  };
+
+  const handleSurveyComplete = async (surveyData: SurveyFormData) => {
+    if (!currentUser) return;
+
+    setIsLoading(true);
+    try {
+      const updatedUser = await api.updateUserResults(currentUser.id, {
+        ...surveyData,
+        completedAt: new Date().toISOString(),
+      });
+
+      if (updatedUser) {
+        setShowSurveyModal(false);
+        setShowThankYouModal(true);
+      }
+    } catch (error) {
+      console.error("Error updating survey results:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen w-full relative bg-Background-Base overflow-hidden">
       <Image
@@ -58,7 +162,7 @@ export default function Home() {
               </div>
 
               {/* Formulário */}
-              <div className="space-y-3">
+              <form onSubmit={handleSubmit(onEmailSubmit)} className="space-y-3">
                 <div className="flex flex-col sm:flex-row gap-3">
                   <div className="flex-1 flex items-center gap-3 px-4 py-3 bg-green-50 border border-green-100 rounded-lg">
                     <svg
@@ -70,15 +174,26 @@ export default function Home() {
                       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                     </svg>
                     <input
+                      {...register("email")}
                       type="email"
                       placeholder="matheus@agristato.com"
                       className="flex-1 bg-transparent border-none outline-none text-black text-sm md:text-base font-outfit min-w-0"
                     />
                   </div>
-                  <button className="px-4 md:px-6 py-3 bg-green-700 text-white text-sm md:text-base font-semibold font-outfit rounded-lg hover:bg-green-800 transition-colors whitespace-nowrap">
-                    Entrar na lista de espera
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className="px-4 md:px-6 py-3 bg-green-700 text-white text-sm md:text-base font-semibold font-outfit rounded-lg hover:bg-green-800 transition-colors whitespace-nowrap disabled:opacity-50"
+                  >
+                    {isLoading ? "Carregando..." : "Entrar na lista de espera"}
                   </button>
                 </div>
+
+                {errors.email && (
+                  <p className="text-red-500 text-sm font-outfit text-center">
+                    {errors.email.message}
+                  </p>
+                )}
 
                 <p className="text-xs text-gray-500 font-outfit text-center">
                   Ao clicar em &quot;Entrar na lista de espera&quot; você concorda com a nossa{" "}
@@ -86,11 +201,17 @@ export default function Home() {
                     Política de Privacidade
                   </span>
                 </p>
-              </div>
+              </form>
 
               <div className="text-center space-y-2">
                 <div className="text-4xl md:text-5xl lg:text-6xl font-bold font-domine text-green-700">
-                  189
+                  {isLoadingCount ? (
+                    <div className="flex items-center justify-center">
+                      <div className="animate-spin rounded-full h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 border-4 border-green-200 border-t-green-700"></div>
+                    </div>
+                  ) : (
+                    userCount
+                  )}
                 </div>
                 <div className="text-base md:text-lg lg:text-2xl text-gray-600 font-outfit">
                   Fazendas na lista de espera
@@ -110,6 +231,25 @@ export default function Home() {
           </div>
         </main>
       </div>
+
+      {/* Modals */}
+      <SuccessModal
+        isOpen={showSuccessModal}
+        onClose={handleCloseSuccessModal}
+        onContinue={() => {
+          setShowSuccessModal(false);
+          setShowSurveyModal(true);
+        }}
+        userCount={userCount}
+      />
+
+      <SurveyModal
+        isOpen={showSurveyModal}
+        onClose={handleCloseSurveyModal}
+        onComplete={handleSurveyComplete}
+      />
+
+      <ThankYouModal isOpen={showThankYouModal} onClose={handleCloseThankYouModal} />
     </div>
   );
 }
