@@ -8,6 +8,7 @@ import { EmailFormData, emailSchema, SurveyFormData } from "@/lib/validations";
 import { User } from "@/types/survey";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -197,9 +198,9 @@ export default function Home() {
 
                 <p className="text-xs text-gray-500 font-outfit text-center">
                   Ao clicar em &quot;Entrar na lista de espera&quot; você concorda com a nossa{" "}
-                  <span className="text-green-700 underline cursor-pointer">
+                  <Link href="/privacy-policy" className="text-green-700 underline cursor-pointer">
                     Política de Privacidade
-                  </span>
+                  </Link>
                 </p>
               </form>
 
