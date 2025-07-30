@@ -25,14 +25,19 @@ export function SuccessModal({ isOpen, onClose, onContinue, userCount = 190 }: S
               Bem-vindo à lista de espera!
             </h2>
             <p className="text-gray-600 font-outfit">
-              Obrigado por se inscrever! Entraremos em contato quando o Agristato estiver disponível
-              e enviaremos uma oferta imperdível.
+              Obrigado por se inscrever! Você receberá em primeira mão todas as novidades sobre o lançamento do Agristato.
             </p>
           </div>
 
-          <div className="text-center">
-            <p className="text-lg font-semibold text-green-700 font-domine mb-2">
+          <div className="w-full bg-green-50 rounded-lg p-4 text-center">
+            <p className="text-sm text-gray-600 font-outfit mb-1">
+              Você é o número
+            </p>
+            <p className="text-2xl font-bold text-green-700 font-domine">
               #{userCount + 1}
+            </p>
+            <p className="text-sm text-gray-600 font-outfit">
+              na lista de espera
             </p>
           </div>
 
@@ -40,7 +45,7 @@ export function SuccessModal({ isOpen, onClose, onContinue, userCount = 190 }: S
             onClick={onContinue}
             className="w-full bg-green-700 hover:bg-green-800 font-outfit font-semibold"
           >
-            Continuar para demonstração
+            Continuar e garantir oferta especial
           </Button>
         </div>
       </DialogContent>

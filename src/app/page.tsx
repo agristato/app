@@ -1,5 +1,6 @@
 "use client";
 
+import { DuplicateEmailModal } from "@/components/DuplicateEmailModal";
 import { SuccessModal } from "@/components/SuccessModal";
 import { SurveyModal } from "@/components/SurveyModal";
 import { ThankYouModal } from "@/components/ThankYouModal";
@@ -17,6 +18,8 @@ export default function Home() {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showSurveyModal, setShowSurveyModal] = useState(false);
   const [showThankYouModal, setShowThankYouModal] = useState(false);
+  const [showDuplicateEmailModal, setShowDuplicateEmailModal] = useState(false);
+  const [duplicateEmail, setDuplicateEmail] = useState("");
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [userCount, setUserCount] = useState(0);
   const [isLoadingCount, setIsLoadingCount] = useState(true);
@@ -58,7 +61,13 @@ export default function Home() {
         reset();
       }
     } catch (error) {
-      console.error("Error creating user:", error);
+      if (error instanceof Error) {
+        console.error("Error creating user:", error);
+        if (error.message === "Email já cadastrado") {
+          setDuplicateEmail(data.email);
+          setShowDuplicateEmailModal(true);
+        }
+      }
     } finally {
       setIsLoading(false);
     }
@@ -118,7 +127,7 @@ export default function Home() {
       <div className="absolute inset-0 bg-gradient-to-b from-white/50 to-white/0" />
 
       <div className="relative z-10 min-h-screen flex flex-col">
-        <header className="w-full p-4 md:p-8 lg:p-12">
+        <header className="w-full pt-10 px-4 md:px-8 lg:px-12">
           <div className="flex items-center gap-2">
             <div className="flex gap-1">
               <Image
@@ -129,15 +138,15 @@ export default function Home() {
                 className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12"
               />
             </div>
-            <div className="text-green-700 text-xl md:text-2xl lg:text-4xl font-bold font-sen">
+            <div className="text-green-700 text-xl md:text-2xl lg:text-4xl font-bold logo">
               Agristato
             </div>
           </div>
         </header>
 
-        <main className="flex-1 flex items-center justify-center px-4 py-8">
-          <div className="w-full max-w-4xl lg:max-w-7xl bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-20 flex flex-col lg:flex-row gap-6 lg:gap-20 items-center">
-            <div className="flex-1 w-full space-y-4 md:space-y-6 lg:space-y-12">
+        <main className="flex-1 flex items-center justify-center px-4 pt-20 pb-8">
+          <div className="w-full max-w-4xl lg:max-w-[1366px] bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 lg:px-16 lg:py-25 flex flex-col lg:flex-row gap-6 lg:gap-10 items-center">
+            <div className="flex-1 w-full space-y-4 md:space-y-6 lg:space-y-10">
               <div className="inline-flex items-center gap-2 px-3 py-2 bg-green-700/10 rounded-full">
                 <span className="text-green-700 text-sm md:text-base font-bold font-outfit">
                   LANÇAMENTO
@@ -177,7 +186,7 @@ export default function Home() {
                     <input
                       {...register("email")}
                       type="email"
-                      placeholder="matheus@agristato.com"
+                      placeholder="Seu melhor email"
                       className="flex-1 bg-transparent border-none outline-none text-black text-sm md:text-base font-outfit min-w-0"
                     />
                   </div>
@@ -251,6 +260,12 @@ export default function Home() {
       />
 
       <ThankYouModal isOpen={showThankYouModal} onClose={handleCloseThankYouModal} />
+
+      <DuplicateEmailModal
+        isOpen={showDuplicateEmailModal}
+        onClose={() => setShowDuplicateEmailModal(false)}
+        email={duplicateEmail}
+      />
     </div>
   );
 }

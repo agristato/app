@@ -32,9 +32,12 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Se usuário já existe, retorna ele para permitir refazer a pesquisa
+    // Se usuário já existe, retorna erro de conflito
     if (existingUser) {
-      return NextResponse.json(existingUser, { status: 200 });
+      return NextResponse.json(
+        { error: 'Email já cadastrado', code: 'DUPLICATE_EMAIL' },
+        { status: 409 }
+      );
     }
 
     // Cria novo usuário

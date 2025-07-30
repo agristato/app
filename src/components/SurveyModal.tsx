@@ -89,7 +89,8 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
       case "farm-size":
         return watch("farmSize");
       case "crops":
-        return selectedCrops.length > 0;
+        return selectedCrops.length > 0 && 
+               (!selectedCrops.includes("outro(s)") || watch("customCrops"));
       case "software":
         return (
           watchedSoftware && (watchedSoftware !== "commercial_software" || watch("customSoftware"))

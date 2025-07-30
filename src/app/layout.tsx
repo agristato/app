@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Domine, Outfit } from "next/font/google";
+import { Domine, Outfit, Sen } from "next/font/google";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -10,6 +10,12 @@ const outfit = Outfit({
 const domine = Domine({
   variable: "--font-domine",
   subsets: ["latin"],
+});
+
+const sen = Sen({
+  variable: "--font-sen",
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -29,15 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Sen:wght@400;600;700;800&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className={`${outfit.variable} ${domine.variable} antialiased`}>{children}</body>
+      <body className={`${outfit.variable} ${domine.variable} ${sen.variable} antialiased`}>{children}</body>
     </html>
   );
 }

@@ -44,7 +44,16 @@
 }
 
 body {
-  font-family: Sen, Domine, Outfit;
+  font-family: var(--font-outfit), Outfit, system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-domine), Domine, serif;
+  font-weight: 700;
+}
+
+.logo, .brand {
+  font-family: var(--font-sen), Sen, sans-serif;
 }
 
 :root {
