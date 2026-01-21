@@ -153,7 +153,7 @@ export default function Home() {
                 </span>
                 <div className="w-1 h-1 bg-green-700 rounded-full" />
                 <span className="text-green-700 text-sm md:text-base font-bold font-outfit">
-                  3 OUT, 2025
+                  3 Mai, 2026
                 </span>
               </div>
 
