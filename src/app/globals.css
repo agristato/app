@@ -4,9 +4,15 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* Shadcn/system tokens */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  /* ── Font utilities (must live here for Tailwind v4 to generate classes) ── */
   --font-sans: var(--font-geist-sans);
+  --font-outfit: var(--font-geist-sans);   /* alias — all font-outfit classes → Geist */
+  --font-domine: var(--font-domine);       /* heading serif — Next.js injects the value */
+  --font-sen: var(--font-sen);             /* brand font */
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -41,10 +47,42 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* ── Agristato brand colors (Reflexai-inspired) ── */
+  --color-forest: #061f00;
+  --color-moss: #003a0b;
+  --color-olive: #61881e;
+  --color-lime: #a5e119;
+  --color-zest: #dfffa3;
+  --color-grass: #09cf58;
+  --color-mint: #d4ffd6;
+
+  /* Beige neutrals */
+  --color-beige: #fbfbf6;
+  --color-beige-25: #f9f9ef;
+  --color-beige-50: #edede1;
+  --color-beige-75: #d6d6c6;
+  --color-beige-100: #686858;
+
+  /* Brand black */
+  --color-ink: #0b0b0b;
+
+  /* Primary brand green — matches frontend #39833c */
+  --color-brand: #39833c;
+  --color-brand-hover: #2d6e30;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-outfit), Outfit, system-ui, sans-serif;
+  font-family: var(--font-geist-sans), Geist, system-ui, sans-serif;
+  background-color: #fbfbf6;
+  color: #0b0b0b;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -58,71 +96,66 @@ h1, h2, h3, h4, h5, h6 {
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --background: #fbfbf6;
+  --foreground: #0b0b0b;
+  --card: #ffffff;
+  --card-foreground: #0b0b0b;
+  --popover: #ffffff;
+  --popover-foreground: #0b0b0b;
+  --primary: #39833c;
+  --primary-foreground: #ffffff;
+  --secondary: #edede1;
+  --secondary-foreground: #0b0b0b;
+  --muted: #edede1;
+  --muted-foreground: #5e5e5e;
+  --accent: #a5e119;
+  --accent-foreground: #061f00;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: #d6d6c6;
+  --input: #edede1;
+  --ring: #a5e119;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: #fbfbf6;
+  --sidebar-foreground: #0b0b0b;
+  --sidebar-primary: #061f00;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #edede1;
+  --sidebar-accent-foreground: #0b0b0b;
+  --sidebar-border: #d6d6c6;
+  --sidebar-ring: #a5e119;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --background: #061f00;
+  --foreground: #fbfbf6;
+  --card: #003a0b;
+  --card-foreground: #fbfbf6;
+  --popover: #003a0b;
+  --popover-foreground: #fbfbf6;
+  --primary: #a5e119;
+  --primary-foreground: #061f00;
+  --secondary: #003a0b;
+  --secondary-foreground: #dfffa3;
+  --muted: #003a0b;
+  --muted-foreground: #b8b89e;
+  --accent: #a5e119;
+  --accent-foreground: #061f00;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --border: rgba(255,255,255,0.1);
+  --input: rgba(255,255,255,0.15);
+  --ring: #a5e119;
+  --sidebar: #003a0b;
+  --sidebar-foreground: #fbfbf6;
+  --sidebar-primary: #a5e119;
+  --sidebar-primary-foreground: #061f00;
+  --sidebar-accent: #003a0b;
+  --sidebar-accent-foreground: #dfffa3;
+  --sidebar-border: rgba(255,255,255,0.1);
+  --sidebar-ring: #a5e119;
 }
 
 @layer base {
@@ -134,16 +167,50 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Custom checkbox styling to ensure green checkmark is white */
+/* Dot pattern background */
+.bg-dot-pattern {
+  background-image: radial-gradient(circle, rgba(165, 225, 25, 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.bg-dot-pattern-light {
+  background-image: radial-gradient(circle, rgba(6, 31, 0, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Grid pattern */
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(rgba(165, 225, 25, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(165, 225, 25, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, #a5e119 0%, #09cf58 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth transitions — only on interactive elements to avoid conflicting with scroll-reveal */
+a, button, [role="button"],
+.transition-colors, .transition-all, .transition-opacity, .transition-transform {
+  transition-property: color, background-color, border-color, opacity, transform, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom checkbox styling */
 [data-state="checked"] .lucide-check {
   color: white !important;
   fill: white !important;
 }
 
-/* Custom checkbox to override default primary colors */
 .checkbox-green[data-state="checked"] {
-  background-color: #16a34a !important;
-  border-color: #16a34a !important;
+  background-color: #061f00 !important;
+  border-color: #061f00 !important;
   color: white !important;
 }
 
@@ -151,19 +218,88 @@ h1, h2, h3, h4, h5, h6 {
   color: white !important;
 }
 
-/* Radio button styling to ensure green background and white indicator */
 [data-state="checked"] .lucide-circle {
   fill: white !important;
   color: white !important;
 }
 
-/* Ensure radio button indicator is visible */
 [data-slot="radio-group-item"][data-state="checked"] {
-  background-color: #16a34a !important;
-  border-color: #16a34a !important;
+  background-color: #061f00 !important;
+  border-color: #061f00 !important;
 }
 
 [data-slot="radio-group-item"][data-state="checked"] svg {
   fill: white !important;
   color: white !important;
+}
+
+/* Section fade-in animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+/* Nav blur */
+.nav-blur {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ── Scroll Reveal ───────────────────────────────────────────────────────── */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-reveal="left"]  { transform: translateX(-32px); }
+[data-reveal="right"] { transform: translateX(32px);  }
+[data-reveal="scale"] { transform: scale(0.95) translateY(20px); }
+[data-reveal].in-view {
+  opacity: 1;
+  transform: none;
+}
+[data-delay="1"] { transition-delay: 80ms;  }
+[data-delay="2"] { transition-delay: 160ms; }
+[data-delay="3"] { transition-delay: 240ms; }
+[data-delay="4"] { transition-delay: 320ms; }
+[data-delay="5"] { transition-delay: 400ms; }
+[data-delay="6"] { transition-delay: 480ms; }
+
+/* Clip-path text reveal for large headings */
+.text-reveal-wrap { overflow: hidden; display: block; }
+.text-reveal-inner {
+  display: block;
+  transform: translateY(100%);
+  transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.text-reveal-inner.in-view { transform: translateY(0); }
+
+/* ── Parallax hero background ────────────────────────────────────────────── */
+.parallax-hero-bg {
+  will-change: transform;
+  transform: translateY(var(--parallax-y, 0));
+}
+
+/* ── Section wave divider ────────────────────────────────────────────────── */
+.wave-divider {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  margin-bottom: -2px;
+}
+.wave-divider svg {
+  display: block;
+  width: 100%;
 }

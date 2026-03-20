@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Domine, Outfit, Sen } from "next/font/google";
+import { Domine, Geist, Sen } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+// Geist replaces Outfit to align with the app's design system
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
@@ -35,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${outfit.variable} ${domine.variable} ${sen.variable} antialiased`}>{children}</body>
+      <body className={`${geistSans.variable} ${domine.variable} ${sen.variable} antialiased`}>{children}</body>
     </html>
   );
 }
