@@ -12,6 +12,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useForm, UseFormRegister } from "react-hook-form";
+import posthog from "posthog-js";
 
 // ─── Icons ────────────────────────────────────────────────────────────────────
 
@@ -655,6 +656,9 @@ export default function Home() {
       const user = await api.createUser(data.email);
       if (user) {
         setCurrentUser(user);
+        posthog.capture("email_captured", { source: "hero" });
+        posthog.alias(user.id);
+        posthog.identify(user.id, { email: data.email });
         setShowSuccessModal(true);
         resetAll();
       }
@@ -698,6 +702,13 @@ export default function Home() {
         completedAt: new Date().toISOString(),
       });
       if (updatedUser) {
+        posthog.capture("survey_completed", {
+          user_profile: surveyData.userProfile,
+          farm_size: surveyData.farmSize,
+          main_crops: surveyData.mainCrops,
+          current_software: surveyData.currentSoftware,
+          pilot_interest: surveyData.pilotInterest,
+        });
         setShowSurveyModal(false);
         setShowThankYouModal(true);
       }
@@ -1865,6 +1876,7 @@ export default function Home() {
         onClose={handleCloseSuccessModal}
         onContinue={() => {
           setShowSuccessModal(false);
+          posthog.capture("survey_opened");
           setShowSurveyModal(true);
         }}
         userCount={userCount}

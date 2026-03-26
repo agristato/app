@@ -12,6 +12,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import posthog from "posthog-js";
 
 interface SurveyModalProps {
   isOpen: boolean;
@@ -54,6 +55,10 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
 
   const handleNext = () => {
     if (currentStep < steps.length - 1) {
+      posthog.capture("survey_step_advanced", {
+        from_step: steps[currentStep].id,
+        step_index: currentStep,
+      });
       setCurrentStep(currentStep + 1);
     }
   };
@@ -501,8 +506,18 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
     }
   };
 
+  const handleClose = () => {
+    if (currentStep > 0) {
+      posthog.capture("survey_abandoned", {
+        at_step: steps[currentStep].id,
+        step_index: currentStep,
+      });
+    }
+    onClose();
+  };
+
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
+    <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogContent className="sm:max-w-xl max-h-[90vh] overflow-y-auto">
         <div className="mb-6">
           <h2 className="text-lg font-semibold font-domine text-gray-900">
