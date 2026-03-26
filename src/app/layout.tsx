@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Domine, Geist, Sen } from "next/font/google";
 import "./globals.css";
+import { PostHogProvider } from "@/components/PostHogProvider";
 
 // Geist replaces Outfit to align with the app's design system
 const geistSans = Geist({
@@ -36,7 +37,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${geistSans.variable} ${domine.variable} ${sen.variable} antialiased`}>{children}</body>
+      <body className={`${geistSans.variable} ${domine.variable} ${sen.variable} antialiased`}>
+        <PostHogProvider>{children}</PostHogProvider>
+      </body>
     </html>
   );
 }
