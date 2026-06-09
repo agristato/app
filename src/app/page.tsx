@@ -245,7 +245,7 @@ function IconX({ className }: { className?: string }) {
 
 const SOIL_FIELDS = [
   { id: "A-01", ph: 5.2, ctc: 6.4, v1: 48, ca: 28, mg: 12 },
-  { id: "A-02", ph: 4.8, ctc: 8.1, v1: 35, ca: 18, mg: 8  },
+  { id: "A-02", ph: 4.8, ctc: 8.1, v1: 35, ca: 18, mg: 8 },
   { id: "B-01", ph: 6.1, ctc: 5.8, v1: 72, ca: 52, mg: 22 },
 ] as const;
 
@@ -259,7 +259,9 @@ function SoilAnalysisMock() {
     <div className="bg-beige-50 rounded-2xl border border-beige-75 p-5 space-y-3 w-full">
       {/* Talhão tabs */}
       <div className="flex items-center justify-between mb-1">
-        <span className="text-beige-100 text-[10px] font-outfit uppercase tracking-wider">Talhão</span>
+        <span className="text-beige-100 text-[10px] font-outfit uppercase tracking-wider">
+          Talhão
+        </span>
         <div className="flex gap-1.5">
           {SOIL_FIELDS.map((f, i) => (
             <button
@@ -284,9 +286,16 @@ function SoilAnalysisMock() {
           { label: "CTC", value: `${field.ctc}` },
           { label: "V1%", value: `${field.v1}%` },
         ].map((item) => (
-          <div key={item.label} className="bg-white rounded-xl p-3 border border-beige-75 text-center">
-            <div className="text-beige-100 text-[10px] font-outfit uppercase tracking-wider mb-1">{item.label}</div>
-            <div className="text-forest font-bold font-domine text-xl">{item.value}</div>
+          <div
+            key={item.label}
+            className="bg-white rounded-xl p-3 border border-beige-75 text-center"
+          >
+            <div className="text-beige-100 text-[10px] font-outfit uppercase tracking-wider mb-1">
+              {item.label}
+            </div>
+            <div className="text-forest font-bold font-domine text-xl">
+              {item.value}
+            </div>
           </div>
         ))}
       </div>
@@ -297,11 +306,20 @@ function SoilAnalysisMock() {
           { label: "Ca inicial", value: field.ca },
           { label: "Mg inicial", value: field.mg },
         ].map((item) => (
-          <div key={item.label} className="bg-white rounded-xl p-3 border border-beige-75">
-            <div className="text-beige-100 text-[10px] font-outfit uppercase tracking-wider mb-1">{item.label}</div>
+          <div
+            key={item.label}
+            className="bg-white rounded-xl p-3 border border-beige-75"
+          >
+            <div className="text-beige-100 text-[10px] font-outfit uppercase tracking-wider mb-1">
+              {item.label}
+            </div>
             <div className="flex items-baseline gap-1">
-              <span className="text-forest font-bold font-domine text-xl">{item.value}</span>
-              <span className="text-beige-100 text-[10px] font-outfit">mmolc/dm³</span>
+              <span className="text-forest font-bold font-domine text-xl">
+                {item.value}
+              </span>
+              <span className="text-beige-100 text-[10px] font-outfit">
+                mmolc/dm³
+              </span>
             </div>
           </div>
         ))}
@@ -309,7 +327,9 @@ function SoilAnalysisMock() {
 
       {/* V2% selector */}
       <div className="bg-white rounded-xl p-3 border border-beige-75">
-        <div className="text-beige-100 text-[10px] font-outfit uppercase tracking-wider mb-2">V2% desejado</div>
+        <div className="text-beige-100 text-[10px] font-outfit uppercase tracking-wider mb-2">
+          V2% desejado
+        </div>
         <div className="flex gap-1.5">
           {[60, 65, 70, 75].map((v) => (
             <button
@@ -328,13 +348,21 @@ function SoilAnalysisMock() {
       </div>
 
       {/* Dose result */}
-      <div className={`rounded-xl p-4 border transition-all ${dose > 0 ? "bg-lime/15 border-lime/30" : "bg-beige-75/30 border-beige-75"}`}>
+      <div
+        className={`rounded-xl p-4 border transition-all ${dose > 0 ? "bg-lime/15 border-lime/30" : "bg-beige-75/30 border-beige-75"}`}
+      >
         <div className="text-olive text-[10px] font-outfit uppercase tracking-wider mb-1">
-          {dose > 0 ? "Dose recomendada de calcário" : "Sem necessidade de calagem"}
+          {dose > 0
+            ? "Dose recomendada de calcário"
+            : "Sem necessidade de calagem"}
         </div>
         <div className="flex items-baseline gap-2">
-          <span className="text-forest font-bold font-domine text-3xl">{dose.toFixed(2)}</span>
-          <span className="text-olive text-sm font-outfit font-semibold">t/ha</span>
+          <span className="text-forest font-bold font-domine text-3xl">
+            {dose.toFixed(2)}
+          </span>
+          <span className="text-olive text-sm font-outfit font-semibold">
+            t/ha
+          </span>
         </div>
         {dose > 0 && (
           <div className="mt-2 h-1.5 bg-white/60 rounded-full overflow-hidden">
@@ -352,16 +380,54 @@ function SoilAnalysisMock() {
 // ─── Dashboard Interactive Mock ────────────────────────────────────────────────
 
 const DASHBOARD_FIELDS = [
-  { id: "A-01", ca: 45.2, mg: 18.4, crop: "Soja",  dose: 2.4, caS: "ideal",       mgS: "ideal"       },
-  { id: "A-02", ca: 18.1, mg: 3.8,  crop: "Milho", dose: 4.8, caS: "restritivo",  mgS: "restritivo"  },
-  { id: "B-01", ca: 62.3, mg: 24.1, crop: "Soja",  dose: 0,   caS: "ideal",       mgS: "ideal"       },
-  { id: "B-02", ca: 22.4, mg: 5.2,  crop: "Trigo", dose: 3.1, caS: "aceitável",   mgS: "aceitável"   },
+  {
+    id: "A-01",
+    ca: 45.2,
+    mg: 18.4,
+    crop: "Soja",
+    dose: 2.4,
+    caS: "ideal",
+    mgS: "ideal",
+  },
+  {
+    id: "A-02",
+    ca: 18.1,
+    mg: 3.8,
+    crop: "Milho",
+    dose: 4.8,
+    caS: "restritivo",
+    mgS: "restritivo",
+  },
+  {
+    id: "B-01",
+    ca: 62.3,
+    mg: 24.1,
+    crop: "Soja",
+    dose: 0,
+    caS: "ideal",
+    mgS: "ideal",
+  },
+  {
+    id: "B-02",
+    ca: 22.4,
+    mg: 5.2,
+    crop: "Trigo",
+    dose: 3.1,
+    caS: "aceitável",
+    mgS: "aceitável",
+  },
 ] as const;
 
 const STATUS_STYLE = {
-  ideal:       { pill: "bg-lime/20 border-lime/30 text-lime",       bar: "#a5e119" },
-  aceitável:   { pill: "bg-yellow-400/20 border-yellow-400/30 text-yellow-300", bar: "#facc15" },
-  restritivo:  { pill: "bg-red-400/20 border-red-400/30 text-red-300",          bar: "#f87171" },
+  ideal: { pill: "bg-lime/20 border-lime/30 text-lime", bar: "#a5e119" },
+  aceitável: {
+    pill: "bg-yellow-400/20 border-yellow-400/30 text-yellow-300",
+    bar: "#facc15",
+  },
+  restritivo: {
+    pill: "bg-red-400/20 border-red-400/30 text-red-300",
+    bar: "#f87171",
+  },
 } as const;
 
 function DashboardMock() {
@@ -372,8 +438,12 @@ function DashboardMock() {
     <div className="space-y-3 w-full">
       {/* Header */}
       <div className="flex items-center justify-between">
-        <span className="text-zest/60 text-xs font-outfit uppercase tracking-wider">Dashboard · Talhões</span>
-        <span className="text-lime/60 text-xs font-outfit">Após calagem · Safra 2026</span>
+        <span className="text-zest/60 text-xs font-outfit uppercase tracking-wider">
+          Dashboard · Talhões
+        </span>
+        <span className="text-lime/60 text-xs font-outfit">
+          Após calagem · Safra 2026
+        </span>
       </div>
 
       {/* Field cards */}
@@ -391,10 +461,14 @@ function DashboardMock() {
                   : "bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20"
               }`}
             >
-              <div className={`text-xs font-bold font-outfit mb-2 ${active ? "text-white" : "text-zest/60"}`}>
+              <div
+                className={`text-xs font-bold font-outfit mb-2 ${active ? "text-white" : "text-zest/60"}`}
+              >
                 {f.id}
               </div>
-              <span className={`text-[9px] font-bold font-outfit px-1.5 py-0.5 rounded-full border ${s.pill}`}>
+              <span
+                className={`text-[9px] font-bold font-outfit px-1.5 py-0.5 rounded-full border ${s.pill}`}
+              >
                 {f.caS}
               </span>
             </button>
@@ -405,7 +479,9 @@ function DashboardMock() {
       {/* Detail panel */}
       <div className="bg-white/8 rounded-xl border border-white/12 p-4 space-y-4">
         <div className="flex items-center justify-between">
-          <span className="text-white font-bold font-domine text-lg">{field.id} — {field.crop}</span>
+          <span className="text-white font-bold font-domine text-lg">
+            {field.id} — {field.crop}
+          </span>
           {field.dose > 0 && (
             <span className="text-lime text-xs font-outfit bg-lime/15 border border-lime/25 px-2.5 py-1 rounded-full font-semibold">
               {field.dose} t/ha calcário
@@ -415,17 +491,40 @@ function DashboardMock() {
 
         {/* Ca / Mg cards */}
         <div className="grid grid-cols-2 gap-2">
-          {([
-            { label: "Ca após calagem", value: field.ca, threshold: 30, max: 80, status: field.caS },
-            { label: "Mg após calagem", value: field.mg, threshold: 8,  max: 40, status: field.mgS },
-          ] as const).map((item) => {
+          {(
+            [
+              {
+                label: "Ca após calagem",
+                value: field.ca,
+                threshold: 30,
+                max: 80,
+                status: field.caS,
+              },
+              {
+                label: "Mg após calagem",
+                value: field.mg,
+                threshold: 8,
+                max: 40,
+                status: field.mgS,
+              },
+            ] as const
+          ).map((item) => {
             const s = STATUS_STYLE[item.status];
             return (
-              <div key={item.label} className={`rounded-lg p-3 border ${s.pill}`}>
-                <div className="text-[10px] font-outfit uppercase tracking-wider mb-1 opacity-80">{item.label}</div>
+              <div
+                key={item.label}
+                className={`rounded-lg p-3 border ${s.pill}`}
+              >
+                <div className="text-[10px] font-outfit uppercase tracking-wider mb-1 opacity-80">
+                  {item.label}
+                </div>
                 <div className="flex items-baseline gap-1 mb-2">
-                  <span className="text-white font-bold font-domine text-2xl">{item.value.toFixed(1)}</span>
-                  <span className="text-white/50 text-[10px] font-outfit">mmolc</span>
+                  <span className="text-white font-bold font-domine text-2xl">
+                    {item.value.toFixed(1)}
+                  </span>
+                  <span className="text-white/50 text-[10px] font-outfit">
+                    mmolc
+                  </span>
                 </div>
                 <div className="h-1.5 bg-black/20 rounded-full overflow-hidden">
                   <div
@@ -445,8 +544,13 @@ function DashboardMock() {
         <div className="flex gap-4 pt-1">
           {(["ideal", "aceitável", "restritivo"] as const).map((s) => (
             <div key={s} className="flex items-center gap-1.5">
-              <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: STATUS_STYLE[s].bar }} />
-              <span className="text-zest/40 text-[10px] font-outfit capitalize">{s}</span>
+              <div
+                className="w-2 h-2 rounded-full flex-shrink-0"
+                style={{ backgroundColor: STATUS_STYLE[s].bar }}
+              />
+              <span className="text-zest/40 text-[10px] font-outfit capitalize">
+                {s}
+              </span>
             </div>
           ))}
         </div>
@@ -843,7 +947,7 @@ export default function Home() {
                 </span>
                 <div className="w-1 h-1 bg-lime rounded-full" />
                 <span className="text-lime text-xs font-bold tracking-wider font-outfit">
-                  3 Mai, 2026
+                  3 Julho, 2026
                 </span>
               </div>
 
@@ -923,7 +1027,7 @@ export default function Home() {
               label: "Fazendas na lista",
             },
             { value: "7+", label: "Ferramentas integradas" },
-            { value: "3 Mai", label: "Data de lançamento" },
+            { value: "3 Julho, 2026", label: "Data de lançamento" },
             { value: "Zero", label: "Planilhas manuais" },
           ].map((stat, i) => (
             <div
@@ -1803,7 +1907,7 @@ export default function Home() {
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-lime/10 border border-lime/20 rounded-full">
                 <div className="w-1.5 h-1.5 bg-lime rounded-full animate-pulse" />
                 <span className="text-lime text-xs font-outfit font-medium">
-                  Lançamento 3 Mai, 2026
+                  Lançamento 3 Julho, 2026
                 </span>
               </div>
             </div>
