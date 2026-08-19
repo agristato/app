@@ -947,7 +947,7 @@ export default function Home() {
                 </span>
                 <div className="w-1 h-1 bg-lime rounded-full" />
                 <span className="text-lime text-xs font-bold tracking-wider font-outfit">
-                  3 Julho, 2026
+                  31 Julho, 2026
                 </span>
               </div>
 
@@ -1027,7 +1027,7 @@ export default function Home() {
               label: "Fazendas na lista",
             },
             { value: "7+", label: "Ferramentas integradas" },
-            { value: "3 Julho, 2026", label: "Data de lançamento" },
+            { value: "31 Julho, 2026", label: "Data de lançamento" },
             { value: "Zero", label: "Planilhas manuais" },
           ].map((stat, i) => (
             <div
@@ -1090,13 +1090,13 @@ export default function Home() {
               <div className="flex flex-wrap gap-2 flex-1">
                 {[
                   { label: "Calagem", available: true },
-                  { label: "Macronutrientes P e K", available: false },
+                  { label: "Macronutrientes P e K", available: true },
                   { label: "Mapa de fertilidade", available: false },
                   { label: "Micronutrientes", available: false },
                 ].map((pill) => (
                   <span
                     key={pill.label}
-                    className={`text-xs font-outfit px-2.5 py-1 rounded-full border ${
+                    className={`text-[10px] font-outfit font-bold px-2 py-0.5 rounded-full border uppercase tracking-wide ${
                       pill.available
                         ? "bg-lime/15 border-lime/25 text-olive"
                         : "bg-beige-50 border-beige-75 text-beige-100"
@@ -1138,16 +1138,16 @@ export default function Home() {
                     Radar de Cotação
                   </h3>
                   <p className="text-zest/60 text-sm font-outfit leading-relaxed">
-                    Preços CEASA em tempo real, 4 algoritmos de projeção e
-                    calculadora de lucratividade por hectare.
+                    Preços CEASA em tempo real, projeção de preços e
+                    ranking de oportunidades por produto e mercado.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-2 flex-1">
                   {[
                     { label: "Cotações CEASA", available: true },
-                    { label: "4 Algoritmos", available: true },
-                    { label: "Recomendação IA", available: true },
-                    { label: "Lucratividade", available: true },
+                    { label: "Projeção de Preços", available: true },
+                    { label: "Ranking de Oportunidades", available: true },
+                    { label: "Comparação Justificada", available: true },
                   ].map((pill) => (
                     <span
                       key={pill.label}
@@ -1250,7 +1250,7 @@ export default function Home() {
               </h3>
               <div className="flex-1 h-px bg-beige-75" />
               <span className="text-beige-100 text-xs font-outfit">
-                6 funcionalidades em desenvolvimento
+                6 funcionalidades do módulo
               </span>
             </div>
 
@@ -1261,36 +1261,42 @@ export default function Home() {
                   title: "Fertilidade — Macronutrientes P e K",
                   description:
                     "Recomendação de adubação de manutenção e correção de fósforo e potássio por cultura e produtividade esperada.",
+                  available: true,
                 },
                 {
                   icon: <IconUpload className="w-5 h-5" />,
                   title: "Exportação de Nutrientes",
                   description:
                     "Calcule a exportação de Ca, Mg, P e K por tonelada colhida — integrado automaticamente ao plano de safra.",
+                  available: true,
                 },
                 {
                   icon: <IconCalendar className="w-5 h-5" />,
                   title: "Rateio Nutricional por Cultura",
                   description:
                     "Distribua a necessidade nutricional ao longo da timeline de safra de forma otimizada e auditável.",
-                },
-                {
-                  icon: <IconMap className="w-5 h-5" />,
-                  title: "Mapa Interpolado de Fertilidade",
-                  description:
-                    "Visualize o teor nutricional com interpolação geoespacial — identifique manchas críticas e zonas de manejo.",
+                  available: true,
                 },
                 {
                   icon: <IconBarChart className="w-5 h-5" />,
                   title: "Custo do Ponto do Nutriente",
                   description:
                     "Compare fertilizantes pelo custo real por kg de nutriente. Calcule a opção mais econômica por talhão.",
+                  available: true,
+                },
+                {
+                  icon: <IconMap className="w-5 h-5" />,
+                  title: "Mapa Interpolado de Fertilidade",
+                  description:
+                    "Visualize o teor nutricional com interpolação geoespacial — identifique manchas críticas e zonas de manejo.",
+                  available: false,
                 },
                 {
                   icon: <IconFlask className="w-5 h-5" />,
                   title: "Fertilidade — Micronutrientes",
                   description:
                     "Análise de B, Cu, Fe, Mn e Zn. Recomendações para culturas exigentes em micronutrição.",
+                  available: false,
                 },
               ].map((feature, i) => (
                 <div
@@ -1306,8 +1312,14 @@ export default function Home() {
                     <h4 className="text-sm font-bold font-domine text-forest/70 leading-snug">
                       {feature.title}
                     </h4>
-                    <span className="flex-shrink-0 text-[10px] font-outfit font-bold uppercase tracking-wide px-2 py-0.5 bg-beige-75 text-beige-100 rounded-full">
-                      Em breve
+                    <span
+                      className={`flex-shrink-0 text-[10px] font-outfit font-bold uppercase tracking-wide px-2 py-0.5 rounded-full ${
+                        feature.available
+                          ? "bg-lime/15 text-olive"
+                          : "bg-beige-75 text-beige-100"
+                      }`}
+                    >
+                      {feature.available ? "Disponível" : "Em breve"}
                     </span>
                   </div>
                   <p className="text-beige-100 text-xs leading-relaxed font-outfit">
@@ -1503,7 +1515,7 @@ export default function Home() {
             data-delay="2"
             className="text-beige-100 text-lg font-outfit leading-relaxed max-w-2xl"
           >
-            Cotações CEASA, 4 algoritmos de projeção e recomendação inteligente
+            Cotações CEASA, projeção de preços e recomendação inteligente
             — tudo em um painel integrado ao seu planejamento de safra.
           </p>
         </div>
@@ -1519,24 +1531,24 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Price cards mock — left side */}
             <div className="order-2 lg:order-1 grid grid-cols-1 gap-4">
-              {/* Recommendation card */}
+              {/* Ranked opportunity card */}
               <div
                 data-reveal
                 className="bg-lime/10 border border-lime/25 rounded-2xl p-5 flex items-start gap-4"
               >
-                <div className="w-10 h-10 rounded-full bg-lime/20 flex items-center justify-center flex-shrink-0">
-                  <IconCheck className="w-5 h-5 text-olive" />
+                <div className="w-8 h-8 rounded bg-lime/30 flex items-center justify-center flex-shrink-0 font-bold font-outfit text-olive text-sm">
+                  #1
                 </div>
                 <div>
                   <div className="text-olive text-xs font-bold uppercase tracking-wider font-outfit mb-1">
-                    Recomendação
+                    Tomate · CEAGESP
                   </div>
                   <div className="text-forest font-bold font-domine text-lg">
-                    Excelente momento para colher
+                    R$ 4,80/kg · tendência de alta
                   </div>
                   <div className="text-beige-100 text-sm font-outfit mt-1">
-                    Preço projetado próximo ao topo histórico dos últimos 5
-                    anos.
+                    Por quê? Maior preço esperado e tendência de alta clara,
+                    mesmo com risco médio.
                   </div>
                 </div>
               </div>
@@ -1549,58 +1561,41 @@ export default function Home() {
               >
                 <div className="bg-white rounded-xl p-4 border border-beige-75">
                   <div className="text-beige-100 text-xs font-outfit mb-1">
-                    Soja · CEASA SP
+                    Batata Inglesa · CEASA MG
                   </div>
                   <div className="text-forest font-bold font-domine text-xl">
-                    R$ 148,20
+                    R$ 2,90/kg
                   </div>
                   <div className="text-olive text-xs font-outfit mt-1 font-semibold">
-                    +3,2% vs. mês anterior
+                    +3,2% vs. média
                   </div>
                 </div>
                 <div className="bg-white rounded-xl p-4 border border-beige-75">
                   <div className="text-beige-100 text-xs font-outfit mb-1">
-                    Milho · CEASA MG
+                    Tomate · CEAGESP
                   </div>
                   <div className="text-forest font-bold font-domine text-xl">
-                    R$ 68,50
+                    R$ 4,80/kg
                   </div>
                   <div className="text-red-400 text-xs font-outfit mt-1 font-semibold">
-                    −1,1% vs. mês anterior
+                    −1,1% vs. média
                   </div>
                 </div>
               </div>
 
-              {/* Algorithm selector mock */}
+              {/* Comparison verdict mock */}
               <div
                 data-reveal
                 data-delay="2"
                 className="bg-white rounded-xl p-5 border border-beige-75"
               >
-                <div className="text-beige-100 text-xs font-outfit mb-3 uppercase tracking-wider">
-                  Algoritmo de projeção
+                <div className="text-beige-100 text-xs font-outfit mb-2 uppercase tracking-wider">
+                  Comparação
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  {["Sazonal", "Regressão Linear", "Holt-Winters", "ARIMA"].map(
-                    (alg, i) => (
-                      <span
-                        key={alg}
-                        className={`px-3 py-1 rounded-lg text-xs font-outfit font-semibold border ${
-                          i === 0
-                            ? "bg-forest text-white border-forest"
-                            : "bg-beige-50 text-beige-100 border-beige-75"
-                        }`}
-                      >
-                        {alg}
-                      </span>
-                    ),
-                  )}
-                </div>
-                <div className="mt-3 h-2 bg-beige-50 rounded-full overflow-hidden">
-                  <div className="h-full w-2/3 bg-gradient-to-r from-forest to-lime rounded-full" />
-                </div>
-                <div className="text-beige-100 text-xs font-outfit mt-1">
-                  Projeção: R$ 152,40 em 30 dias
+                <div className="text-forest text-sm font-outfit leading-relaxed">
+                  Tomate em CEAGESP aparece à frente: maior preço esperado e
+                  tendência de alta clara. Se prefere segurança, Batata
+                  Inglesa em CEASA MG tem o menor risco do trio.
                 </div>
               </div>
             </div>
@@ -1614,16 +1609,16 @@ export default function Home() {
                     desc: "Preços médios por unidade e produto, atualizados periodicamente.",
                   },
                   {
-                    label: "4 algoritmos de projeção",
-                    desc: "Sazonal, regressão linear, Holt-Winters e ARIMA — você escolhe o modelo.",
+                    label: "Projeção de preços",
+                    desc: "Estimativa de preço para os próximos dias com base em dados históricos.",
                   },
                   {
-                    label: "Recomendação inteligente",
-                    desc: '"Excelente momento", "Neutro" ou "Atenção" — com justificativa baseada em dados históricos.',
+                    label: "Ranking de oportunidades",
+                    desc: "Compare produto, mercado e janela de colheita lado a lado, ranqueados por preço esperado, tendência e risco.",
                   },
                   {
-                    label: "Calculadora de lucratividade",
-                    desc: "Simule o lucro por hectare com base no preço projetado e seu custo de produção.",
+                    label: "Justificativa por comparação",
+                    desc: 'Cada posição no ranking vem com o "por quê" — a razão concreta que a coloca à frente ou atrás das demais.',
                   },
                 ].map((item) => (
                   <div key={item.label} className="flex gap-3">
@@ -1677,23 +1672,23 @@ export default function Home() {
                 icon: <IconSearch className="w-6 h-6" />,
                 title: "Selecione produto e região",
                 description:
-                  "Escolha a cultura (soja, milho, trigo...) e o CEASA de referência. O sistema carrega as cotações históricas automaticamente.",
+                  "Escolha o produto (tomate, batata, cebola...) e o CEASA de referência. O sistema carrega as cotações históricas automaticamente.",
                 color: "bg-lime/15 text-olive border-lime/20",
                 stepColor: "bg-forest text-white",
               },
               {
                 step: "02",
                 icon: <IconBarChart className="w-6 h-6" />,
-                title: "Escolha o algoritmo",
+                title: "Veja um ranking de produto",
                 description:
-                  "Selecione entre Sazonal, Regressão Linear, Holt-Winters ou ARIMA. Cada modelo exibe a projeção de preço para os próximos 30 dias.",
+                  "O sistema calcula a projeção de preço para os próximos 30 dias com base em dados históricos.",
                 color: "bg-moss/10 text-forest border-moss/15",
                 stepColor: "bg-moss text-white",
               },
               {
                 step: "03",
                 icon: <IconBolt className="w-6 h-6" />,
-                title: "Receba a recomendação",
+                title: "Compare e tome a decisão correta",
                 description:
                   "O sistema classifica o momento como Excelente, Neutro ou Atenção — com justificativa baseada em dados históricos e tendência calculada.",
                 color: "bg-olive/10 text-olive border-olive/20",
@@ -1907,7 +1902,7 @@ export default function Home() {
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-lime/10 border border-lime/20 rounded-full">
                 <div className="w-1.5 h-1.5 bg-lime rounded-full animate-pulse" />
                 <span className="text-lime text-xs font-outfit font-medium">
-                  Lançamento 3 Julho, 2026
+                  Lançamento 31 Julho, 2026
                 </span>
               </div>
             </div>
