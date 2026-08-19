@@ -16,110 +16,10 @@ import posthog from "posthog-js";
 
 // ─── Icons ────────────────────────────────────────────────────────────────────
 
-function IconLeaf({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64"
-      />
-    </svg>
-  );
-}
-
-function IconBarChart({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"
-      />
-    </svg>
-  );
-}
-
-function IconCalendar({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
-      />
-    </svg>
-  );
-}
-
-function IconBolt({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
-      />
-    </svg>
-  );
-}
-
-function IconUpload({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"
-      />
-    </svg>
-  );
-}
-
 function IconCheck({ className }: { className?: string }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M4.5 12.75l6 6 9-13.5"
-      />
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
     </svg>
   );
 }
@@ -133,111 +33,54 @@ function IconEmail({ className }: { className?: string }) {
   );
 }
 
-function IconTrendUp({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"
-      />
-    </svg>
-  );
-}
-
-function IconMap({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M9 6.75V15m6-6v8.25m-3-9.375l-3-2.625-3 2.625V18.75l3-2.625 3 2.625 3-2.625V6.375l-3 2.625z"
-      />
-    </svg>
-  );
-}
-
-function IconFlask({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.3 24.3 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15M14.25 3.104c.251.023.501.05.75.082M19.8 15a2.25 2.25 0 01.207 1.68l-.793 3.174A2.25 2.25 0 0117.023 21H6.977a2.25 2.25 0 01-2.19-1.746l-.794-3.174A2.25 2.25 0 014.2 15h15.6z"
-      />
-    </svg>
-  );
-}
-
-function IconSearch({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 0z"
-      />
-    </svg>
-  );
-}
-
 function IconMenu({ className }: { className?: string }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-      />
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
     </svg>
   );
 }
 
 function IconX({ className }: { className?: string }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M6 18L18 6M6 6l12 12"
-      />
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
     </svg>
+  );
+}
+
+// ─── Soil Core — hero signature element ────────────────────────────────────
+// A vertical horizon profile, the way an auger sample actually reads: dark
+// humus on top, oxidized clay and pale saprolite below. Each band carries a
+// real measurement, in the same units a laudo would print.
+
+const HORIZON_BANDS = [
+  { code: "A", label: "Amostra bruta", reading: "pH 4,8 · Al³⁺ 0,9", bg: "#1a130d", fg: "#f1e6d4" },
+  { code: "B1", label: "Diagnóstico", reading: "V1 42% · CTC 8,4", bg: "#5a3420", fg: "#f1e6d4" },
+  { code: "B2", label: "Prescrição", reading: "V2 65% · PRNT 90%", bg: "#93602b", fg: "#241a10" },
+  { code: "C", label: "Dose calculada", reading: "3,62 t/ha calcítico", bg: "#c1663f", fg: "#241a10" },
+  { code: "R", label: "Plano de safra", reading: "Ca/Mg ideal · 3 safras", bg: "#dba54c", fg: "#241a10" },
+] as const;
+
+function SoilCore() {
+  return (
+    <div className="w-full max-w-md border border-white/15 rounded-lg overflow-hidden shadow-xl shadow-black/30">
+      {HORIZON_BANDS.map((band, i) => (
+        <div
+          key={band.code}
+          data-reveal="left"
+          data-delay={String(i + 1)}
+          className="grid grid-cols-[44px_1fr_auto] items-center gap-3 px-4 py-3.5 sm:py-4"
+          style={{ backgroundColor: band.bg, color: band.fg }}
+        >
+          <span className="font-data text-xs opacity-70">{band.code}</span>
+          <span className="font-display text-sm sm:text-base">{band.label}</span>
+          <span className="font-data text-[11px] sm:text-xs opacity-85 text-right whitespace-nowrap">
+            {band.reading}
+          </span>
+        </div>
+      ))}
+    </div>
   );
 }
 
@@ -256,21 +99,23 @@ function SoilAnalysisMock() {
   const dose = Math.max(0, ((v2 - field.v1) * field.ctc) / 0.9 / 100);
 
   return (
-    <div className="bg-beige-50 rounded-2xl border border-beige-75 p-5 space-y-3 w-full">
+    <div className="bg-sand rounded-lg border border-parchment-75 p-5 space-y-3 w-full">
       {/* Talhão tabs */}
       <div className="flex items-center justify-between mb-1">
-        <span className="text-beige-100 text-[10px] font-outfit uppercase tracking-wider">
+        <span className="text-parchment-100 text-[10px] font-sans uppercase tracking-wider">
           Talhão
         </span>
-        <div className="flex gap-1.5">
+        <div className="flex gap-1.5" role="tablist" aria-label="Selecionar talhão">
           {SOIL_FIELDS.map((f, i) => (
             <button
               key={f.id}
+              role="tab"
+              aria-selected={i === activeTab}
               onClick={() => setActiveTab(i)}
-              className={`px-3 py-1 rounded-lg text-xs font-semibold font-outfit border transition-all ${
+              className={`px-3 py-1 rounded-md text-xs font-semibold font-sans border transition-all ${
                 i === activeTab
-                  ? "bg-forest text-white border-forest shadow-sm"
-                  : "bg-white text-beige-100 border-beige-75 hover:border-beige-100"
+                  ? "bg-humus text-white border-humus shadow-sm"
+                  : "bg-white text-parchment-100 border-parchment-75 hover:border-parchment-100"
               }`}
             >
               {f.id}
@@ -286,16 +131,11 @@ function SoilAnalysisMock() {
           { label: "CTC", value: `${field.ctc}` },
           { label: "V1%", value: `${field.v1}%` },
         ].map((item) => (
-          <div
-            key={item.label}
-            className="bg-white rounded-xl p-3 border border-beige-75 text-center"
-          >
-            <div className="text-beige-100 text-[10px] font-outfit uppercase tracking-wider mb-1">
+          <div key={item.label} className="bg-white rounded-md p-3 border border-parchment-75 text-center">
+            <div className="text-parchment-100 text-[10px] font-sans uppercase tracking-wider mb-1">
               {item.label}
             </div>
-            <div className="text-forest font-bold font-domine text-xl">
-              {item.value}
-            </div>
+            <div className="text-humus font-bold font-data text-xl">{item.value}</div>
           </div>
         ))}
       </div>
@@ -306,28 +146,21 @@ function SoilAnalysisMock() {
           { label: "Ca inicial", value: field.ca },
           { label: "Mg inicial", value: field.mg },
         ].map((item) => (
-          <div
-            key={item.label}
-            className="bg-white rounded-xl p-3 border border-beige-75"
-          >
-            <div className="text-beige-100 text-[10px] font-outfit uppercase tracking-wider mb-1">
+          <div key={item.label} className="bg-white rounded-md p-3 border border-parchment-75">
+            <div className="text-parchment-100 text-[10px] font-sans uppercase tracking-wider mb-1">
               {item.label}
             </div>
             <div className="flex items-baseline gap-1">
-              <span className="text-forest font-bold font-domine text-xl">
-                {item.value}
-              </span>
-              <span className="text-beige-100 text-[10px] font-outfit">
-                mmolc/dm³
-              </span>
+              <span className="text-humus font-bold font-data text-xl">{item.value}</span>
+              <span className="text-parchment-100 text-[10px] font-sans">mmolc/dm³</span>
             </div>
           </div>
         ))}
       </div>
 
       {/* V2% selector */}
-      <div className="bg-white rounded-xl p-3 border border-beige-75">
-        <div className="text-beige-100 text-[10px] font-outfit uppercase tracking-wider mb-2">
+      <div className="bg-white rounded-md p-3 border border-parchment-75">
+        <div className="text-parchment-100 text-[10px] font-sans uppercase tracking-wider mb-2">
           V2% desejado
         </div>
         <div className="flex gap-1.5">
@@ -335,10 +168,10 @@ function SoilAnalysisMock() {
             <button
               key={v}
               onClick={() => setV2(v)}
-              className={`flex-1 py-1.5 rounded-lg text-xs font-semibold font-outfit border transition-all ${
+              className={`flex-1 py-1.5 rounded-md text-xs font-semibold font-data border transition-all ${
                 v2 === v
-                  ? "bg-forest text-white border-forest"
-                  : "bg-beige-50 text-beige-100 border-beige-75 hover:border-beige-100"
+                  ? "bg-humus text-white border-humus"
+                  : "bg-parchment text-parchment-100 border-parchment-75 hover:border-parchment-100"
               }`}
             >
               {v}%
@@ -349,25 +182,19 @@ function SoilAnalysisMock() {
 
       {/* Dose result */}
       <div
-        className={`rounded-xl p-4 border transition-all ${dose > 0 ? "bg-lime/15 border-lime/30" : "bg-beige-75/30 border-beige-75"}`}
+        className={`rounded-md p-4 border transition-all ${dose > 0 ? "bg-clay/10 border-clay/30" : "bg-parchment-75/30 border-parchment-75"}`}
       >
-        <div className="text-olive text-[10px] font-outfit uppercase tracking-wider mb-1">
-          {dose > 0
-            ? "Dose recomendada de calcário"
-            : "Sem necessidade de calagem"}
+        <div className="text-rust text-[10px] font-sans uppercase tracking-wider mb-1">
+          {dose > 0 ? "Dose recomendada de calcário" : "Sem necessidade de calagem"}
         </div>
         <div className="flex items-baseline gap-2">
-          <span className="text-forest font-bold font-domine text-3xl">
-            {dose.toFixed(2)}
-          </span>
-          <span className="text-olive text-sm font-outfit font-semibold">
-            t/ha
-          </span>
+          <span className="text-humus font-bold font-data text-3xl">{dose.toFixed(2)}</span>
+          <span className="text-rust text-sm font-sans font-semibold">t/ha</span>
         </div>
         {dose > 0 && (
           <div className="mt-2 h-1.5 bg-white/60 rounded-full overflow-hidden">
             <div
-              className="h-full bg-lime rounded-full transition-all duration-500"
+              className="h-full bg-clay rounded-full transition-all duration-500"
               style={{ width: `${Math.min(100, (dose / 6) * 100)}%` }}
             />
           </div>
@@ -380,54 +207,16 @@ function SoilAnalysisMock() {
 // ─── Dashboard Interactive Mock ────────────────────────────────────────────────
 
 const DASHBOARD_FIELDS = [
-  {
-    id: "A-01",
-    ca: 45.2,
-    mg: 18.4,
-    crop: "Soja",
-    dose: 2.4,
-    caS: "ideal",
-    mgS: "ideal",
-  },
-  {
-    id: "A-02",
-    ca: 18.1,
-    mg: 3.8,
-    crop: "Milho",
-    dose: 4.8,
-    caS: "restritivo",
-    mgS: "restritivo",
-  },
-  {
-    id: "B-01",
-    ca: 62.3,
-    mg: 24.1,
-    crop: "Soja",
-    dose: 0,
-    caS: "ideal",
-    mgS: "ideal",
-  },
-  {
-    id: "B-02",
-    ca: 22.4,
-    mg: 5.2,
-    crop: "Trigo",
-    dose: 3.1,
-    caS: "aceitável",
-    mgS: "aceitável",
-  },
+  { id: "A-01", ca: 45.2, mg: 18.4, crop: "Soja", dose: 2.4, caS: "ideal", mgS: "ideal" },
+  { id: "A-02", ca: 18.1, mg: 3.8, crop: "Milho", dose: 4.8, caS: "restritivo", mgS: "restritivo" },
+  { id: "B-01", ca: 62.3, mg: 24.1, crop: "Soja", dose: 0, caS: "ideal", mgS: "ideal" },
+  { id: "B-02", ca: 22.4, mg: 5.2, crop: "Trigo", dose: 3.1, caS: "aceitável", mgS: "aceitável" },
 ] as const;
 
 const STATUS_STYLE = {
-  ideal: { pill: "bg-lime/20 border-lime/30 text-lime", bar: "#a5e119" },
-  aceitável: {
-    pill: "bg-yellow-400/20 border-yellow-400/30 text-yellow-300",
-    bar: "#facc15",
-  },
-  restritivo: {
-    pill: "bg-red-400/20 border-red-400/30 text-red-300",
-    bar: "#f87171",
-  },
+  ideal: { pill: "bg-sprout/20 border-sprout/30 text-sprout", bar: "#8fae7c" },
+  "aceitável": { pill: "bg-ochre/20 border-ochre/30 text-ochre", bar: "#dba54c" },
+  restritivo: { pill: "bg-alert/20 border-alert/30 text-[#e08a7d]", bar: "#a3372a" },
 } as const;
 
 function DashboardMock() {
@@ -438,37 +227,33 @@ function DashboardMock() {
     <div className="space-y-3 w-full">
       {/* Header */}
       <div className="flex items-center justify-between">
-        <span className="text-zest/60 text-xs font-outfit uppercase tracking-wider">
+        <span className="text-parchment/60 text-xs font-sans uppercase tracking-wider">
           Dashboard · Talhões
         </span>
-        <span className="text-lime/60 text-xs font-outfit">
-          Após calagem · Safra 2026
-        </span>
+        <span className="text-ochre/70 text-xs font-sans">Após calagem · Safra 2026</span>
       </div>
 
       {/* Field cards */}
-      <div className="grid grid-cols-4 gap-2">
+      <div className="grid grid-cols-4 gap-2" role="tablist" aria-label="Selecionar talhão do dashboard">
         {DASHBOARD_FIELDS.map((f, i) => {
           const s = STATUS_STYLE[f.caS];
           const active = i === selected;
           return (
             <button
               key={f.id}
+              role="tab"
+              aria-selected={active}
               onClick={() => setSelected(i)}
-              className={`rounded-xl p-3 border text-left transition-all ${
+              className={`rounded-md p-3 border text-left transition-all ${
                 active
                   ? "bg-white/15 border-white/30 shadow-md"
                   : "bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20"
               }`}
             >
-              <div
-                className={`text-xs font-bold font-outfit mb-2 ${active ? "text-white" : "text-zest/60"}`}
-              >
+              <div className={`text-xs font-bold font-data mb-2 ${active ? "text-white" : "text-parchment/60"}`}>
                 {f.id}
               </div>
-              <span
-                className={`text-[9px] font-bold font-outfit px-1.5 py-0.5 rounded-full border ${s.pill}`}
-              >
+              <span className={`text-[9px] font-bold font-sans px-1.5 py-0.5 rounded-full border ${s.pill}`}>
                 {f.caS}
               </span>
             </button>
@@ -477,13 +262,13 @@ function DashboardMock() {
       </div>
 
       {/* Detail panel */}
-      <div className="bg-white/8 rounded-xl border border-white/12 p-4 space-y-4">
+      <div className="bg-white/8 rounded-md border border-white/12 p-4 space-y-4">
         <div className="flex items-center justify-between">
-          <span className="text-white font-bold font-domine text-lg">
+          <span className="text-white font-bold font-display text-lg">
             {field.id} — {field.crop}
           </span>
           {field.dose > 0 && (
-            <span className="text-lime text-xs font-outfit bg-lime/15 border border-lime/25 px-2.5 py-1 rounded-full font-semibold">
+            <span className="text-ochre text-xs font-data bg-ochre/15 border border-ochre/25 px-2.5 py-1 rounded-full font-semibold">
               {field.dose} t/ha calcário
             </span>
           )}
@@ -493,46 +278,24 @@ function DashboardMock() {
         <div className="grid grid-cols-2 gap-2">
           {(
             [
-              {
-                label: "Ca após calagem",
-                value: field.ca,
-                threshold: 30,
-                max: 80,
-                status: field.caS,
-              },
-              {
-                label: "Mg após calagem",
-                value: field.mg,
-                threshold: 8,
-                max: 40,
-                status: field.mgS,
-              },
+              { label: "Ca após calagem", value: field.ca, max: 80, status: field.caS },
+              { label: "Mg após calagem", value: field.mg, max: 40, status: field.mgS },
             ] as const
           ).map((item) => {
             const s = STATUS_STYLE[item.status];
             return (
-              <div
-                key={item.label}
-                className={`rounded-lg p-3 border ${s.pill}`}
-              >
-                <div className="text-[10px] font-outfit uppercase tracking-wider mb-1 opacity-80">
+              <div key={item.label} className={`rounded-md p-3 border ${s.pill}`}>
+                <div className="text-[10px] font-sans uppercase tracking-wider mb-1 opacity-80">
                   {item.label}
                 </div>
                 <div className="flex items-baseline gap-1 mb-2">
-                  <span className="text-white font-bold font-domine text-2xl">
-                    {item.value.toFixed(1)}
-                  </span>
-                  <span className="text-white/50 text-[10px] font-outfit">
-                    mmolc
-                  </span>
+                  <span className="text-white font-bold font-data text-2xl">{item.value.toFixed(1)}</span>
+                  <span className="text-white/50 text-[10px] font-sans">mmolc</span>
                 </div>
                 <div className="h-1.5 bg-black/20 rounded-full overflow-hidden">
                   <div
                     className="h-full rounded-full transition-all duration-500"
-                    style={{
-                      width: `${Math.min(100, (item.value / item.max) * 100)}%`,
-                      backgroundColor: s.bar,
-                    }}
+                    style={{ width: `${Math.min(100, (item.value / item.max) * 100)}%`, backgroundColor: s.bar }}
                   />
                 </div>
               </div>
@@ -544,13 +307,8 @@ function DashboardMock() {
         <div className="flex gap-4 pt-1">
           {(["ideal", "aceitável", "restritivo"] as const).map((s) => (
             <div key={s} className="flex items-center gap-1.5">
-              <div
-                className="w-2 h-2 rounded-full flex-shrink-0"
-                style={{ backgroundColor: STATUS_STYLE[s].bar }}
-              />
-              <span className="text-zest/40 text-[10px] font-outfit capitalize">
-                {s}
-              </span>
+              <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: STATUS_STYLE[s].bar }} />
+              <span className="text-parchment/40 text-[10px] font-sans capitalize">{s}</span>
             </div>
           ))}
         </div>
@@ -559,22 +317,35 @@ function DashboardMock() {
   );
 }
 
-// ─── Wave Divider ──────────────────────────────────────────────────────────────
+// ─── Plot-boundary divider ─────────────────────────────────────────────────
+// Replaces the generic wave-SVG divider with the same vocabulary as a
+// talhão boundary line — the polygon data the product already stores for
+// every field — rather than a decorative blob.
 
-function Wave({ className }: { className?: string }) {
+function PlotDivider({ className }: { className?: string }) {
   return (
-    <div className={`wave-divider ${className ?? ""}`} aria-hidden>
-      <svg
-        viewBox="0 0 1440 56"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
-        className="h-14"
-      >
-        <path
-          d="M0,28 C240,56 480,0 720,28 C960,56 1200,0 1440,28 L1440,56 L0,56 Z"
-          fill="currentColor"
-        />
+    <div className={`plot-divider ${className ?? ""}`} aria-hidden>
+      <svg viewBox="0 0 1440 28" preserveAspectRatio="none">
+        <path d="M0,14 L120,9 L260,17 L410,6 L560,15 L720,10 L900,18 L1060,7 L1220,14 L1440,10" />
       </svg>
+    </div>
+  );
+}
+
+// ─── Numbered step (used within each module block) ─────────────────────────
+
+function StepRow({ steps }: { steps: { n: string; label: string }[] }) {
+  return (
+    <div className="flex flex-wrap items-center gap-x-2 gap-y-2 font-data text-xs sm:text-sm">
+      {steps.map((s, i) => (
+        <span key={s.n} className="flex items-center gap-2">
+          <span className="inline-flex items-center gap-1.5">
+            <span className="opacity-60">{s.n}</span>
+            <span>{s.label}</span>
+          </span>
+          {i < steps.length - 1 && <span className="opacity-40">→</span>}
+        </span>
+      ))}
     </div>
   );
 }
@@ -600,52 +371,40 @@ function EmailForm({
     <form onSubmit={onSubmit} className="space-y-3 w-full">
       <div className="flex flex-col sm:flex-row gap-3">
         <div
-          className={`flex-1 flex items-center gap-3 px-4 py-3 rounded-xl border ${
-            isDark
-              ? "bg-white/10 border-white/20 text-white"
-              : "bg-white border-beige-75 text-ink"
+          className={`flex-1 flex items-center gap-3 px-4 py-3 rounded-md border ${
+            isDark ? "bg-white/10 border-white/20 text-white" : "bg-white border-parchment-75 text-ink"
           }`}
         >
-          <IconEmail
-            className={`w-4 h-4 flex-shrink-0 ${isDark ? "text-zest/60" : "text-beige-100"}`}
-          />
+          <IconEmail className={`w-4 h-4 flex-shrink-0 ${isDark ? "text-parchment/60" : "text-parchment-100"}`} />
           <input
             {...register("email")}
             type="email"
             placeholder="Seu melhor email"
-            className={`flex-1 bg-transparent border-none outline-none text-sm font-outfit min-w-0 placeholder:opacity-60 ${
-              isDark
-                ? "text-white placeholder:text-zest"
-                : "text-ink placeholder:text-beige-100"
+            className={`flex-1 bg-transparent border-none outline-none text-sm font-sans min-w-0 placeholder:opacity-60 ${
+              isDark ? "text-white placeholder:text-parchment" : "text-ink placeholder:text-parchment-100"
             }`}
           />
         </div>
         <button
           type="submit"
           disabled={isLoading}
-          className={`px-6 py-3 font-semibold font-outfit rounded-xl text-sm whitespace-nowrap disabled:opacity-60 transition-all duration-200 ${
-            isDark
-              ? "bg-lime text-forest hover:bg-zest"
-              : "bg-brand text-white hover:bg-brand-hover"
+          className={`px-6 py-3 font-semibold font-sans rounded-md text-sm whitespace-nowrap disabled:opacity-60 transition-all duration-200 ${
+            isDark ? "bg-clay text-white hover:bg-rust" : "bg-rust text-white hover:bg-clay"
           }`}
         >
           {isLoading ? "Enviando..." : "Entrar na lista de espera"}
         </button>
       </div>
       {errors.email && (
-        <p
-          className={`text-sm text-center ${isDark ? "text-red-300" : "text-red-600"}`}
-        >
+        <p className={`text-sm text-center ${isDark ? "text-[#e08a7d]" : "text-alert"}`}>
           {errors.email.message}
         </p>
       )}
-      <p
-        className={`text-xs text-center ${isDark ? "text-zest/50" : "text-beige-100"}`}
-      >
+      <p className={`text-xs text-center ${isDark ? "text-parchment/50" : "text-parchment-100"}`}>
         Ao continuar você concorda com a nossa{" "}
         <Link
           href="/privacy-policy"
-          className={`underline ${isDark ? "text-zest/70 hover:text-zest" : "text-olive hover:text-forest"}`}
+          className={`underline ${isDark ? "text-parchment/70 hover:text-parchment" : "text-rust hover:text-humus"}`}
         >
           Política de Privacidade
         </Link>
@@ -687,30 +446,10 @@ export default function Home() {
     return () => io.disconnect();
   }, []);
 
-  // Text-reveal spans
-  useEffect(() => {
-    const els = document.querySelectorAll(".text-reveal-inner");
-    const io = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("in-view");
-            io.unobserve(e.target);
-          }
-        }),
-      { threshold: 0.1 },
-    );
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, []);
-
   // Parallax on hero
   const onScroll = useCallback(() => {
     if (heroRef.current) {
-      heroRef.current.style.setProperty(
-        "--parallax-y",
-        `${window.scrollY * 0.35}px`,
-      );
+      heroRef.current.style.setProperty("--parallax-y", `${window.scrollY * 0.35}px`);
     }
   }, []);
   useEffect(() => {
@@ -829,99 +568,57 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-beige text-ink overflow-x-hidden">
+    <div className="min-h-screen bg-parchment text-ink overflow-x-hidden">
       {/* ── Navigation ─────────────────────────────────────────────────────── */}
-      <nav className="sticky top-0 z-50 bg-beige/90 nav-blur border-b border-beige-50">
+      <nav className="sticky top-0 z-50 bg-parchment/90 nav-blur border-b border-parchment-75">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          {/* Logo */}
           <div className="flex items-center gap-2.5">
-            <Image
-              src="/logo.svg"
-              alt="Agristato"
-              width={32}
-              height={32}
-              className="w-8 h-8"
-            />
-            <span className="logo font-bold text-xl text-brand tracking-tight">
+            <Image src="/logo.svg" alt="Agristato" width={32} height={32} className="w-8 h-8" />
+            <span className="font-display font-semibold text-xl text-rust tracking-tight">
               Agristato
             </span>
           </div>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-forest/60">
-            <a
-              href="#analise-solo"
-              className="hover:text-forest transition-colors"
-            >
-              Análise de Solo
-            </a>
-            <a
-              href="#radar"
-              className="hover:text-forest transition-colors flex items-center gap-1.5"
-            >
-              Radar de Cotação
-              <span className="px-1.5 py-0.5 bg-lime/20 text-olive text-[10px] font-bold rounded uppercase tracking-wide font-outfit">
-                Novo
-              </span>
-            </a>
-            <a href="#sobre" className="hover:text-forest transition-colors">
-              Sobre
-            </a>
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-ink/60">
+            <a href="#metodologia" className="hover:text-ink transition-colors">Metodologia</a>
+            <a href="#resultados" className="hover:text-ink transition-colors">Resultados</a>
+            <a href="#validacao" className="hover:text-ink transition-colors">Validação</a>
           </div>
 
-          {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
             <button
               onClick={scrollToCta}
-              className="px-5 py-2 bg-brand text-white text-sm font-semibold rounded-xl hover:bg-brand-hover transition-colors"
+              className="px-5 py-2 bg-rust text-white text-sm font-semibold rounded-md hover:bg-clay transition-colors"
             >
               Entrar na lista
             </button>
           </div>
 
-          {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 text-forest"
+            className="md:hidden p-2 text-ink"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? (
-              <IconX className="w-5 h-5" />
-            ) : (
-              <IconMenu className="w-5 h-5" />
-            )}
+            {mobileMenuOpen ? <IconX className="w-5 h-5" /> : <IconMenu className="w-5 h-5" />}
           </button>
         </div>
 
-        {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-beige border-t border-beige-50 px-6 py-4 space-y-3">
-            <a
-              href="#analise-solo"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-sm text-forest/70 hover:text-forest"
-            >
-              Análise de Solo
+          <div className="md:hidden bg-parchment border-t border-parchment-75 px-6 py-4 space-y-3">
+            <a href="#metodologia" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm text-ink/70 hover:text-ink">
+              Metodologia
             </a>
-            <a
-              href="#radar"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-sm text-forest/70 hover:text-forest flex items-center gap-1.5"
-            >
-              Radar de Cotação
-              <span className="px-1.5 py-0.5 bg-lime/20 text-olive text-[10px] font-bold rounded uppercase tracking-wide font-outfit">
-                Novo
-              </span>
+            <a href="#resultados" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm text-ink/70 hover:text-ink">
+              Resultados
             </a>
-            <a
-              href="#sobre"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-sm text-forest/70 hover:text-forest"
-            >
-              Sobre
+            <a href="#validacao" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm text-ink/70 hover:text-ink">
+              Validação
             </a>
             <button
               onClick={scrollToCta}
-              className="w-full mt-2 py-3 bg-brand text-white text-sm font-semibold rounded-xl hover:bg-brand-hover transition-colors"
+              className="w-full mt-2 py-3 bg-rust text-white text-sm font-semibold rounded-md hover:bg-clay transition-colors"
             >
               Entrar na lista
             </button>
@@ -929,86 +626,331 @@ export default function Home() {
         )}
       </nav>
 
-      {/* ── Hero ───────────────────────────────────────────────────────────── */}
-      <section ref={heroRef} className="relative bg-forest overflow-hidden">
-        <div className="absolute inset-0 bg-dot-pattern opacity-40 pointer-events-none parallax-hero-bg" />
-        <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-forest to-transparent pointer-events-none" />
+      {/* ══════════════════════════════════════════════════════════════════ */}
+      {/* 00 — CAPA (hero)                                                    */}
+      {/* ══════════════════════════════════════════════════════════════════ */}
+      <section ref={heroRef} className="relative bg-humus overflow-hidden">
+        <div className="absolute inset-0 bg-dot-pattern opacity-60 pointer-events-none parallax-hero-bg" />
+        <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-humus to-transparent pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 pt-20 pb-24 lg:pt-28 lg:pb-32">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left — text */}
             <div className="space-y-8">
-              <div
-                data-reveal
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-lime/15 border border-lime/25 rounded-full"
-              >
-                <span className="text-lime text-xs font-bold tracking-wider font-outfit uppercase">
-                  Lançamento
+              <div data-reveal className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                <span className="font-data text-[11px] text-ochre uppercase tracking-wider">
+                  Laudo técnico 001 · Pré-lançamento
                 </span>
-                <div className="w-1 h-1 bg-lime rounded-full" />
-                <span className="text-lime text-xs font-bold tracking-wider font-outfit">
-                  31 Julho, 2026
+                <span className="inline-flex items-center gap-2 px-3 py-1 bg-clay/15 border border-clay/25 rounded-full">
+                  <div className="w-1 h-1 bg-clay rounded-full" />
+                  <span className="font-data text-clay text-xs tracking-wider">31 Julho, 2026</span>
                 </span>
               </div>
 
               <div data-reveal data-delay="1" className="space-y-4">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-domine text-white leading-[1.1] tracking-tight">
-                  Uma plataforma para quem toma{" "}
-                  <span className="text-lime">decisões no campo</span>
+                <h1 className="text-4xl sm:text-5xl lg:text-[3.4rem] font-display font-medium text-white leading-[1.08] tracking-tight">
+                  Da amostra ao talhão, <span className="italic text-ochre">em uma dose só.</span>
                 </h1>
-                <p className="text-lg text-zest/70 leading-relaxed font-outfit max-w-lg">
-                  Do cálculo de calagem ao radar de preços do CEASA —{" "}
-                  <span className="text-zest font-semibold">
-                    análise de solo
-                  </span>
-                  ,{" "}
-                  <span className="text-zest font-semibold">
-                    planejamento de safra
-                  </span>{" "}
-                  e{" "}
-                  <span className="text-zest font-semibold">
-                    inteligência de mercado
-                  </span>{" "}
-                  em um só lugar.
+                <p className="text-lg text-parchment/70 leading-relaxed font-sans max-w-lg">
+                  Calagem, gessagem e adubação calculadas com as fórmulas do{" "}
+                  <span className="text-parchment font-semibold">Boletim IAC 100</span> e da{" "}
+                  <span className="text-parchment font-semibold">EMBRAPA Cerrados</span>, para até{" "}
+                  <span className="font-data text-ochre">20 mil</span> talhões de uma vez.
                 </p>
               </div>
 
-              <EmailForm
-                onSubmit={handleSubmit(onEmailSubmit)}
-                isLoading={isLoading}
-                errors={errors}
-                register={register}
-                variant="dark"
-              />
+              <EmailForm onSubmit={handleSubmit(onEmailSubmit)} isLoading={isLoading} errors={errors} register={register} variant="dark" />
 
-              {/* Waitlist counter */}
               <div className="flex items-center gap-4 pt-2">
-                <div>
-                  {isLoadingCount ? (
-                    <div className="w-20 h-5 bg-white/10 rounded animate-pulse" />
-                  ) : (
-                    <p className="text-white font-outfit">
-                      <span className="font-bold text-lime font-domine text-2xl">
-                        {userCount}
-                      </span>{" "}
-                      <span className="text-lg">fazendas já na lista</span>
-                    </p>
-                  )}
-                </div>
+                {isLoadingCount ? (
+                  <div className="w-20 h-5 bg-white/10 rounded animate-pulse" />
+                ) : (
+                  <p className="text-white font-sans">
+                    <span className="font-bold text-ochre font-data text-2xl">{userCount}</span>{" "}
+                    <span className="text-lg">fazendas já na lista</span>
+                  </p>
+                )}
               </div>
             </div>
 
-            {/* Right — screenshot */}
+            {/* Right — soil core */}
             <div className="hidden lg:flex justify-end">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-lime/10 rounded-3xl blur-2xl" />
+              <SoilCore />
+            </div>
+          </div>
+
+          {/* Mobile soil core */}
+          <div className="lg:hidden mt-12">
+            <SoilCore />
+          </div>
+        </div>
+      </section>
+
+      <PlotDivider className="bg-humus text-parchment-75" />
+
+      {/* ══════════════════════════════════════════════════════════════════ */}
+      {/* 01 — DIAGNÓSTICO                                                    */}
+      {/* ══════════════════════════════════════════════════════════════════ */}
+      <section id="diagnostico" className="py-24 px-6 bg-parchment">
+        <div className="max-w-7xl mx-auto space-y-14">
+          <div data-reveal className="max-w-3xl space-y-4">
+            <span className="font-data text-xs text-rust uppercase tracking-wider">01 · Diagnóstico</span>
+            <h2 className="text-3xl lg:text-5xl font-display font-medium text-ink leading-tight">
+              O problema não é falta de dado. <span className="italic text-rust">É excesso de planilha.</span>
+            </h2>
+            <p className="text-ink/60 text-lg font-sans leading-relaxed">
+              Agrônomos e produtores perdem horas por safra copiando laudos, recalculando doses talhão a
+              talhão e montando planos em planilhas paralelas — uma para cada laboratório, uma para cada
+              cliente.
+            </p>
+          </div>
+
+          {/* Before / After */}
+          <div className="grid gap-3">
+            {[
+              { before: "Copia e cola laudo do laboratório na planilha", after: "Upload do arquivo — dados prontos em segundos" },
+              { before: "Calcula dose de calcário manualmente, talhão a talhão", after: "O sistema aplica a fórmula V% para até 20 mil talhões por vez" },
+              { before: "Sem visibilidade do Ca e Mg após a colheita", after: "Dashboard projeta o saldo de nutrientes por safra" },
+              { before: "Consulta preço do CEASA em planilhas separadas", after: "Radar de Cotação cruza preço, tendência e janela de plantio" },
+            ].map((row, i) => (
+              <div key={row.before} data-reveal data-delay={String((i % 4) + 1)} className="grid md:grid-cols-2 gap-3">
+                <div className="bg-alert/5 border border-alert/20 rounded-md p-4">
+                  <div className="font-data text-alert text-[10px] mb-1.5 uppercase tracking-wider">Antes</div>
+                  <p className="text-ink/70 text-sm leading-relaxed font-sans">{row.before}</p>
+                </div>
+                <div className="bg-moss/8 border border-moss/25 rounded-md p-4">
+                  <div className="font-data text-moss text-[10px] mb-1.5 uppercase tracking-wider">Com Agristato</div>
+                  <p className="text-ink text-sm leading-relaxed font-sans">{row.after}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Verifiable facts, not marketing stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-6 border-t border-parchment-75">
+            {[
+              { value: "20.000", label: "Amostras por lote" },
+              { value: "268", label: "Testes automatizados" },
+              { value: "27", label: "Culturas cadastradas" },
+              { value: "18", label: "Meses de planejamento" },
+            ].map((stat, i) => (
+              <div key={stat.label} data-reveal data-delay={String(i + 1)} className="space-y-1">
+                <div className="text-3xl lg:text-4xl font-data font-semibold text-rust">{stat.value}</div>
+                <div className="text-ink/50 text-sm font-sans">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════════ */}
+      {/* 02 — METODOLOGIA                                                    */}
+      {/* ══════════════════════════════════════════════════════════════════ */}
+      <section className="py-24 px-6 bg-parchment">
+        <div className="max-w-7xl mx-auto space-y-16">
+          <div data-reveal className="max-w-3xl space-y-4">
+            <span className="font-data text-xs text-rust uppercase tracking-wider">02 · Metodologia</span>
+            <h2 className="text-3xl lg:text-5xl font-display font-medium text-ink leading-tight">
+              Duas ferramentas, <span className="italic text-rust">o vocabulário que você já usa.</span>
+            </h2>
+            <p className="text-ink/60 text-lg font-sans leading-relaxed">
+              Nada de jargão de startup. Cada número na tela é um termo que você já vê no laudo do
+              laboratório ou no boletim da CEASA.
+            </p>
+          </div>
+
+          {/* ── Módulo 01 — Análise de Solo ─────────────────────────────── */}
+          <div id="analise-solo" className="space-y-8">
+            <div data-reveal className="flex items-center gap-3">
+              <span className="font-data text-[11px] text-parchment-100 uppercase tracking-wider">Módulo 01</span>
+              <div className="flex-1 h-px bg-parchment-75" />
+            </div>
+
+            <div data-reveal className="grid lg:grid-cols-2 gap-10 items-start">
+              <div className="space-y-5">
+                <h3 className="text-2xl font-display font-medium text-ink">
+                  Calagem, gessagem e adubação — com fonte citada
+                </h3>
+                <p className="text-ink/60 text-sm leading-relaxed font-sans">
+                  V1% e V2%, CTC, PRNT, NC por saturação, alumínio ou o máximo entre os dois — pela
+                  metodologia IAC ou Cerrados. Tipo de calcário recomendado (calcítico ou dolomítico),
+                  gessagem por textura de solo (Sousa &amp; Lobato, EMBRAPA Cerrados 2004) e adubação de
+                  P e K (ERP/CFSEMG) para 27 culturas cadastradas.
+                </p>
+                <StepRow
+                  steps={[
+                    { n: "01", label: "Importe o CSV/XLSX" },
+                    { n: "02", label: "Defina a timeline de 18 meses" },
+                    { n: "03", label: "Receba dose, custo e trilha auditável" },
+                  ]}
+                />
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {[
+                    { label: "Calagem", available: true },
+                    { label: "Macronutrientes P e K", available: true },
+                    { label: "Gessagem", available: true },
+                    { label: "Rateio por safra", available: true },
+                    { label: "Mapa de fertilidade", available: false },
+                    { label: "Micronutrientes", available: false },
+                  ].map((pill) => (
+                    <span
+                      key={pill.label}
+                      className={`text-[10px] font-sans font-bold px-2 py-0.5 rounded-full border uppercase tracking-wide ${
+                        pill.available
+                          ? "bg-moss/10 border-moss/30 text-moss"
+                          : "bg-parchment-75/40 border-parchment-75 text-parchment-100"
+                      }`}
+                    >
+                      {pill.label} · {pill.available ? "disponível" : "em breve"}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <SoilAnalysisMock />
+            </div>
+          </div>
+
+          {/* ── Módulo 02 — Radar de Cotação ─────────────────────────────── */}
+          <div id="radar" data-reveal className="bg-humus rounded-lg border border-white/10 p-8 lg:p-10 relative overflow-hidden">
+            <div className="absolute inset-0 bg-dot-pattern opacity-30 pointer-events-none" />
+            <div className="relative z-10 space-y-8">
+              <div className="flex items-center gap-3">
+                <span className="font-data text-[11px] text-parchment/50 uppercase tracking-wider">Módulo 02</span>
+                <span className="px-2 py-0.5 bg-clay/20 border border-clay/30 text-ochre text-[10px] font-bold rounded-full uppercase tracking-wide font-sans">
+                  Novo
+                </span>
+                <div className="flex-1 h-px bg-white/10" />
+              </div>
+
+              <div className="grid lg:grid-cols-2 gap-10 items-start">
+                <div className="space-y-5">
+                  <h3 className="text-2xl font-display font-medium text-white">
+                    Preço, tendência e janela de plantio — cruzados automaticamente
+                  </h3>
+                  <p className="text-parchment/60 text-sm leading-relaxed font-sans">
+                    Preços diários da CEASA desde 2015 (46 unidades, 48 produtos) e volumes mensais do
+                    SIMAB desde 2021 (30 unidades, 530 produtos). O ranking de oportunidades cruza
+                    produto, mercado e data de plantio — e mostra o motivo de cada posição.
+                  </p>
+                  <StepRow
+                    steps={[
+                      { n: "01", label: "Selecione produto e região" },
+                      { n: "02", label: "Veja o ranking de oportunidades" },
+                      { n: "03", label: "Compare e decida" },
+                    ]}
+                  />
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {["Cotações CEASA", "Projeção de preços", "Ranking de oportunidades", "Comparação justificada"].map(
+                      (label) => (
+                        <span
+                          key={label}
+                          className="text-[10px] font-sans font-bold px-2 py-0.5 rounded-full border uppercase tracking-wide bg-ochre/15 border-ochre/30 text-ochre"
+                        >
+                          {label} · disponível
+                        </span>
+                      ),
+                    )}
+                  </div>
+                </div>
+
+                {/* Price mock */}
+                <div className="grid grid-cols-1 gap-3">
+                  <div className="bg-clay/10 border border-clay/25 rounded-md p-5 flex items-start gap-4">
+                    <div className="w-8 h-8 rounded bg-clay/25 flex items-center justify-center flex-shrink-0 font-data text-ochre text-sm">
+                      #1
+                    </div>
+                    <div>
+                      <div className="text-ochre text-xs font-bold uppercase tracking-wider font-sans mb-1">
+                        Tomate · CEAGESP
+                      </div>
+                      <div className="text-white font-bold font-data text-lg">R$ 4,80/kg · alta</div>
+                      <div className="text-parchment/60 text-sm font-sans mt-1">
+                        Maior preço esperado e tendência de alta clara, mesmo com risco médio.
+                      </div>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="bg-white/5 rounded-md p-4 border border-white/10">
+                      <div className="text-parchment/50 text-xs font-sans mb-1">Batata · CEASA MG</div>
+                      <div className="text-white font-bold font-data text-xl">R$ 2,90/kg</div>
+                      <div className="text-sprout text-xs font-data mt-1 font-semibold">+3,2% vs. média</div>
+                    </div>
+                    <div className="bg-white/5 rounded-md p-4 border border-white/10">
+                      <div className="text-parchment/50 text-xs font-sans mb-1">Tomate · CEAGESP</div>
+                      <div className="text-white font-bold font-data text-xl">R$ 4,80/kg</div>
+                      <div className="text-[#e08a7d] text-xs font-data mt-1 font-semibold">−1,1% vs. média</div>
+                    </div>
+                  </div>
+                  <div className="bg-white/5 rounded-md p-4 border border-white/10">
+                    <div className="text-parchment/50 text-xs font-sans mb-2 uppercase tracking-wider">
+                      Comparação
+                    </div>
+                    <div className="text-parchment/80 text-sm font-sans leading-relaxed">
+                      Tomate em CEAGESP à frente: maior preço esperado e tendência de alta clara. Para
+                      menor risco, Batata em CEASA MG é a opção mais estável do trio.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <PlotDivider className="bg-parchment text-humus" />
+
+      {/* ══════════════════════════════════════════════════════════════════ */}
+      {/* 03 — LEITURA DE RESULTADOS                                          */}
+      {/* ══════════════════════════════════════════════════════════════════ */}
+      <section id="resultados" className="py-24 px-6 bg-humus relative overflow-hidden">
+        <div className="absolute inset-0 bg-dot-pattern opacity-30 pointer-events-none" />
+        <div className="relative z-10 max-w-7xl mx-auto space-y-14">
+          <div data-reveal className="max-w-3xl space-y-4">
+            <span className="font-data text-xs text-ochre uppercase tracking-wider">03 · Leitura de resultados</span>
+            <h2 className="text-3xl lg:text-5xl font-display font-medium text-white leading-tight">
+              Dashboard completo, <span className="italic text-ochre">por talhão.</span>
+            </h2>
+            <p className="text-parchment/60 text-lg leading-relaxed font-sans">
+              Tabela por talhão com V1%, CTC, as três leituras de NC e a dose recomendada. Saldo de Ca e
+              Mg projetado safra a safra, ranking de custo por ponto de nutriente e a trilha auditável de
+              cada termo da fórmula.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <div className="space-y-3">
+                {[
+                  "Saldo de Ca e Mg projetado por safra, cultura a cultura",
+                  "Tabela por talhão: V1%, CTC, NC (3 métodos) e dose",
+                  "Ranking de custo por ponto de nutriente entre 8 fertilizantes",
+                  "Trilha auditável de cada termo calculado",
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <div className="w-5 h-5 rounded-full bg-ochre/20 flex items-center justify-center flex-shrink-0">
+                      <IconCheck className="w-3 h-3 text-ochre" />
+                    </div>
+                    <span className="text-parchment/80 text-sm font-sans">{item}</span>
+                  </div>
+                ))}
+              </div>
+              <button
+                onClick={scrollToCta}
+                className="inline-flex px-6 py-3.5 bg-clay text-white text-sm font-semibold rounded-md hover:bg-ochre hover:text-humus transition-colors font-sans"
+              >
+                Garantir acesso antecipado →
+              </button>
+            </div>
+
+            <div className="space-y-4">
+              <DashboardMock />
+              <div className="relative rounded-md overflow-hidden border border-white/10">
                 <Image
                   src="/app-example.png"
-                  alt="Agristato Dashboard"
+                  alt="Tela do dashboard do Agristato mostrando talhões, doses e status de Ca/Mg"
                   width={600}
                   height={375}
-                  className="relative rounded-2xl shadow-2xl shadow-black/40 border border-white/10 w-full max-w-[600px]"
-                  priority
+                  className="w-full h-auto"
                 />
               </div>
             </div>
@@ -1016,860 +958,67 @@ export default function Home() {
         </div>
       </section>
 
-      <Wave className="bg-forest text-moss" />
+      <PlotDivider className="bg-humus text-parchment-75" />
 
-      {/* ── Stats bar ──────────────────────────────────────────────────────── */}
-      <section className="bg-moss py-10 px-6 border-b border-white/10">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
-          {[
-            {
-              value: isLoadingCount ? "..." : `${userCount}+`,
-              label: "Fazendas na lista",
-            },
-            { value: "7+", label: "Ferramentas integradas" },
-            { value: "31 Julho, 2026", label: "Data de lançamento" },
-            { value: "Zero", label: "Planilhas manuais" },
-          ].map((stat, i) => (
-            <div
-              key={stat.label}
-              data-reveal
-              data-delay={String(i + 1)}
-              className="text-center"
-            >
-              <div className="text-3xl lg:text-4xl font-bold font-domine text-lime">
-                {stat.value}
-              </div>
-              <div className="text-zest/60 text-sm mt-1 font-outfit">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <Wave className="bg-moss text-beige-50" />
-
-      {/* ── Platform Overview ───────────────────────────────────────────────── */}
-      <section id="plataforma" className="py-20 px-6 bg-beige-50">
-        <div className="max-w-4xl mx-auto">
-          <div data-reveal className="text-center mb-12 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-lime/15 border border-lime/25 rounded-full">
-              <span className="text-olive text-xs font-bold tracking-wider uppercase font-outfit">
-                O que o Agristato faz
-              </span>
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold font-domine text-forest">
-              Ferramentas que{" "}
-              <span className="text-olive">transformam dados em decisões</span>
-            </h2>
-            <p className="text-beige-100 text-base font-outfit max-w-lg mx-auto">
-              Cada ferramenta resolve um problema real — juntas formam o núcleo
-              de gestão da sua operação.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Card A — Análise de Solo */}
-            <div
-              data-reveal
-              data-delay="1"
-              className="bg-white border border-lime/20 rounded-2xl p-8 hover:border-lime/40 transition-colors flex flex-col gap-5"
-            >
-              <div>
-                <div className="inline-flex p-3 rounded-xl bg-lime/15 text-olive border border-lime/15 mb-4">
-                  <IconLeaf className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold font-domine text-forest mb-2">
-                  Análise de Solo
-                </h3>
-                <p className="text-beige-100 text-sm font-outfit leading-relaxed">
-                  Calagem, fertilidade, exportação de nutrientes e mapas
-                  interpolados. Do laudo CSV ao plano de manejo completo.
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-2 flex-1">
-                {[
-                  { label: "Calagem", available: true },
-                  { label: "Macronutrientes P e K", available: true },
-                  { label: "Mapa de fertilidade", available: false },
-                  { label: "Micronutrientes", available: false },
-                ].map((pill) => (
-                  <span
-                    key={pill.label}
-                    className={`text-[10px] font-outfit font-bold px-2 py-0.5 rounded-full border uppercase tracking-wide ${
-                      pill.available
-                        ? "bg-lime/15 border-lime/25 text-olive"
-                        : "bg-beige-50 border-beige-75 text-beige-100"
-                    }`}
-                  >
-                    {pill.label} · {pill.available ? "disponível" : "em breve"}
-                  </span>
-                ))}
-              </div>
-              <a
-                href="#analise-solo"
-                className="text-sm font-semibold font-outfit text-forest hover:text-olive transition-colors"
-              >
-                Ver módulo ↓
-              </a>
-            </div>
-
-            {/* Card B — Radar de Cotação */}
-            <div
-              data-reveal
-              data-delay="2"
-              className="bg-forest border border-white/10 rounded-2xl p-8 relative overflow-hidden flex flex-col gap-5"
-            >
-              <div className="absolute inset-0 bg-dot-pattern opacity-20 pointer-events-none" />
-              <div className="relative z-10 flex flex-col gap-5 h-full">
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="inline-flex p-3 rounded-xl bg-lime/15 text-lime border border-lime/15">
-                      <IconTrendUp className="w-6 h-6" />
-                    </div>
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-lime/15 border border-lime/25 rounded-full">
-                      <div className="w-1.5 h-1.5 bg-lime rounded-full animate-pulse" />
-                      <span className="text-lime text-[10px] font-bold uppercase tracking-wider font-outfit">
-                        Novo
-                      </span>
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-bold font-domine text-white mb-2">
-                    Radar de Cotação
-                  </h3>
-                  <p className="text-zest/60 text-sm font-outfit leading-relaxed">
-                    Preços CEASA em tempo real, projeção de preços e
-                    ranking de oportunidades por produto e mercado.
-                  </p>
-                </div>
-                <div className="flex flex-wrap gap-2 flex-1">
-                  {[
-                    { label: "Cotações CEASA", available: true },
-                    { label: "Projeção de Preços", available: true },
-                    { label: "Ranking de Oportunidades", available: true },
-                    { label: "Comparação Justificada", available: true },
-                  ].map((pill) => (
-                    <span
-                      key={pill.label}
-                      className="text-xs font-outfit px-2.5 py-1 rounded-full border bg-lime/15 border-lime/25 text-lime"
-                    >
-                      {pill.label} · disponível
-                    </span>
-                  ))}
-                </div>
-                <a
-                  href="#radar"
-                  className="text-sm font-semibold font-outfit text-lime hover:text-zest transition-colors"
-                >
-                  Ver módulo ↓
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════════════════ */}
-      {/* MÓDULO 01 — ANÁLISE DE SOLO                                          */}
-      {/* ══════════════════════════════════════════════════════════════════════ */}
-
-      {/* ── Análise de Solo — intro + features ─────────────────────────────── */}
-      <section id="analise-solo" className="py-24 px-6 bg-beige">
+      {/* ══════════════════════════════════════════════════════════════════ */}
+      {/* 04 — VALIDAÇÃO                                                      */}
+      {/* ══════════════════════════════════════════════════════════════════ */}
+      <section id="validacao" className="py-24 px-6 bg-parchment">
         <div className="max-w-7xl mx-auto space-y-14">
-          {/* Module header */}
-          <div data-reveal className="space-y-4 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-lime/15 border border-lime/25 rounded-full">
-              <IconLeaf className="w-3.5 h-3.5 text-olive" />
-              <span className="text-olive text-xs font-bold tracking-wider uppercase font-outfit">
-                Análise de Solo
-              </span>
-            </div>
-            <h2 className="text-3xl lg:text-5xl font-bold font-domine text-forest leading-tight">
-              Do laudo de solo ao plano de{" "}
-              <span className="text-olive">manejo completo</span>
+          <div data-reveal className="max-w-3xl space-y-4">
+            <span className="font-data text-xs text-rust uppercase tracking-wider">04 · Validação</span>
+            <h2 className="text-3xl lg:text-5xl font-display font-medium text-ink leading-tight">
+              Por que confiar <span className="italic text-rust">no número que a tela mostra.</span>
             </h2>
-            <p className="text-beige-100 text-lg font-outfit leading-relaxed">
-              Sete ferramentas integradas que eliminam planilhas e entregam
-              recomendações precisas — da calagem ao mapa interpolado de
-              fertilidade do solo.
+            <p className="text-ink/60 text-lg font-sans leading-relaxed">
+              Nenhuma constante é arbitrária. Cada cálculo aponta para uma fonte — e o sistema é testado
+              como qualquer software de produção precisa ser.
             </p>
           </div>
 
-          {/* Feature 1 — Hero card: Calagem */}
-          <div
-            data-reveal
-            className="bg-white rounded-2xl border border-lime/20 p-8 lg:p-10 grid md:grid-cols-2 gap-10 items-center"
-          >
-            <div className="space-y-5">
-              <div className="flex items-center gap-3">
-                <div className="inline-flex p-3 rounded-xl bg-lime/15 text-olive border border-lime/15">
-                  <IconLeaf className="w-6 h-6" />
-                </div>
-                <span className="px-2.5 py-1 bg-lime/20 text-olive text-xs font-bold rounded-full uppercase tracking-wide font-outfit">
-                  Disponível agora
-                </span>
-              </div>
-              <h3 className="text-2xl font-bold font-domine text-forest">
-                Calagem — Método V%
-              </h3>
-              <p className="text-beige-100 text-sm leading-relaxed font-outfit">
-                Calcule a dose exata de calcário por talhão com base em pH, CTC,
-                V1% e V2%. Parâmetros globais editáveis pelo agrônomo. Sem
-                fórmulas manuais, sem erros de arredondamento.
-              </p>
-              <ul className="space-y-2.5">
-                {[
-                  "Método V% homologado (IAC/Embrapa)",
-                  "V2% e PRNT% globais configuráveis",
-                  "Dashboard de Ca e Mg por talhão",
-                  "Timeline de culturas com 18 meses de planejamento",
-                  "Importação CSV/XLSX de qualquer laboratório",
-                ].map((f) => (
-                  <li
-                    key={f}
-                    className="flex items-center gap-2.5 text-sm text-forest/80 font-outfit"
-                  >
-                    <div className="w-4 h-4 rounded-full bg-lime/20 flex items-center justify-center flex-shrink-0">
-                      <IconCheck className="w-2.5 h-2.5 text-olive" />
-                    </div>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="hidden md:flex items-center justify-center">
-              <SoilAnalysisMock />
-            </div>
-          </div>
-
-          {/* Features 2-7 — Roadmap grid */}
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <h3 className="text-lg font-bold font-domine text-forest">
-                Roadmap do módulo
-              </h3>
-              <div className="flex-1 h-px bg-beige-75" />
-              <span className="text-beige-100 text-xs font-outfit">
-                6 funcionalidades do módulo
-              </span>
-            </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {[
-                {
-                  icon: <IconLeaf className="w-5 h-5" />,
-                  title: "Fertilidade — Macronutrientes P e K",
-                  description:
-                    "Recomendação de adubação de manutenção e correção de fósforo e potássio por cultura e produtividade esperada.",
-                  available: true,
-                },
-                {
-                  icon: <IconUpload className="w-5 h-5" />,
-                  title: "Exportação de Nutrientes",
-                  description:
-                    "Calcule a exportação de Ca, Mg, P e K por tonelada colhida — integrado automaticamente ao plano de safra.",
-                  available: true,
-                },
-                {
-                  icon: <IconCalendar className="w-5 h-5" />,
-                  title: "Rateio Nutricional por Cultura",
-                  description:
-                    "Distribua a necessidade nutricional ao longo da timeline de safra de forma otimizada e auditável.",
-                  available: true,
-                },
-                {
-                  icon: <IconBarChart className="w-5 h-5" />,
-                  title: "Custo do Ponto do Nutriente",
-                  description:
-                    "Compare fertilizantes pelo custo real por kg de nutriente. Calcule a opção mais econômica por talhão.",
-                  available: true,
-                },
-                {
-                  icon: <IconMap className="w-5 h-5" />,
-                  title: "Mapa Interpolado de Fertilidade",
-                  description:
-                    "Visualize o teor nutricional com interpolação geoespacial — identifique manchas críticas e zonas de manejo.",
-                  available: false,
-                },
-                {
-                  icon: <IconFlask className="w-5 h-5" />,
-                  title: "Fertilidade — Micronutrientes",
-                  description:
-                    "Análise de B, Cu, Fe, Mn e Zn. Recomendações para culturas exigentes em micronutrição.",
-                  available: false,
-                },
-              ].map((feature, i) => (
-                <div
-                  key={feature.title}
-                  data-reveal
-                  data-delay={String((i % 3) + 1)}
-                  className="bg-beige-50 border border-beige-75 rounded-xl p-5 hover:bg-white hover:border-beige-100 transition-colors"
-                >
-                  <div className="inline-flex p-2.5 rounded-lg bg-beige-75/60 text-beige-100 mb-4">
-                    {feature.icon}
-                  </div>
-                  <div className="flex items-start justify-between gap-2 mb-2">
-                    <h4 className="text-sm font-bold font-domine text-forest/70 leading-snug">
-                      {feature.title}
-                    </h4>
-                    <span
-                      className={`flex-shrink-0 text-[10px] font-outfit font-bold uppercase tracking-wide px-2 py-0.5 rounded-full ${
-                        feature.available
-                          ? "bg-lime/15 text-olive"
-                          : "bg-beige-75 text-beige-100"
-                      }`}
-                    >
-                      {feature.available ? "Disponível" : "Em breve"}
-                    </span>
-                  </div>
-                  <p className="text-beige-100 text-xs leading-relaxed font-outfit">
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Wave className="bg-beige text-forest" />
-
-      {/* ── Product Showcase (Análise de Solo) ─────────────────────────────── */}
-      <section className="py-24 px-6 bg-forest relative overflow-hidden">
-        <div className="absolute inset-0 bg-dot-pattern opacity-30 pointer-events-none" />
-        <div className="absolute inset-0 bg-grid-pattern pointer-events-none" />
-
-        <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div
-                data-reveal
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-lime/15 border border-lime/25 rounded-full"
-              >
-                <IconLeaf className="w-3.5 h-3.5 text-lime" />
-                <span className="text-lime text-xs font-bold tracking-wider uppercase font-outfit">
-                  Análise de Solo · Dashboard
-                </span>
-              </div>
-              <h2
-                data-reveal
-                data-delay="1"
-                className="text-3xl lg:text-5xl font-bold font-domine text-white leading-tight"
-              >
-                Dashboard completo <span className="text-lime">por talhão</span>
-              </h2>
-              <p
-                data-reveal
-                data-delay="2"
-                className="text-zest/70 text-lg leading-relaxed font-outfit"
-              >
-                Visualize a saúde do solo de cada talhão em tempo real.
-                Snapshots de Ca e Mg após cada colheita mostram exatamente
-                quando e quanto corrigir.
-              </p>
-
-              <div className="space-y-3.5">
-                {[
-                  "Projeção de Ca e Mg após calagem",
-                  "Simulação pós-colheita cultura a cultura",
-                  "Status de cada talhão com alertas coloridos",
-                  "Exportação e compartilhamento do plano",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-lime/20 flex items-center justify-center flex-shrink-0">
-                      <IconCheck className="w-3 h-3 text-lime" />
-                    </div>
-                    <span className="text-zest/80 text-sm font-outfit">
-                      {item}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              <button
-                onClick={scrollToCta}
-                className="inline-flex px-6 py-3.5 bg-lime text-forest text-sm font-semibold rounded-xl hover:bg-zest transition-colors font-outfit"
-              >
-                Garantir acesso antecipado →
-              </button>
-            </div>
-
-            <div className="flex items-center justify-center">
-              <DashboardMock />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Wave className="bg-forest text-beige" />
-
-      {/* ── Como funciona — Análise de Solo ────────────────────────────────── */}
-      <section id="como-funciona" className="py-24 px-6 bg-beige">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-lime/15 border border-lime/25 rounded-full">
-              <IconLeaf className="w-3.5 h-3.5 text-olive" />
-              <span className="text-olive text-xs font-bold tracking-wider uppercase font-outfit">
-                Análise de Solo · Como funciona
-              </span>
-            </div>
-            <h2 className="text-3xl lg:text-5xl font-bold font-domine text-forest">
-              Do CSV ao plano de manejo{" "}
-              <span className="text-olive">em minutos</span>
-            </h2>
-            <p className="text-beige-100 text-lg max-w-2xl mx-auto font-outfit">
-              Três etapas simples para transformar a análise do seu solo em
-              ações concretas de manejo.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-12 relative">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-px bg-parchment-75 border border-parchment-75 rounded-lg overflow-hidden">
             {[
-              {
-                step: "01",
-                icon: <IconUpload className="w-6 h-6" />,
-                title: "Importe a análise do solo",
-                description:
-                  "Faça upload do CSV ou XLSX com os dados de análise do solo. O Agristato reconhece automaticamente colunas de pH, CTC, Ca, Mg e V%.",
-                color: "bg-lime/15 text-olive border-lime/20",
-                stepColor: "bg-forest text-white",
-              },
-              {
-                step: "02",
-                icon: <IconCalendar className="w-6 h-6" />,
-                title: "Defina a timeline de culturas",
-                description:
-                  "Monte o calendário agrícola dos próximos 18 meses. Atribua culturas e produtividades esperadas a cada talhão e época de plantio.",
-                color: "bg-moss/10 text-forest border-moss/15",
-                stepColor: "bg-moss text-white",
-              },
-              {
-                step: "03",
-                icon: <IconBolt className="w-6 h-6" />,
-                title: "Receba as recomendações",
-                description:
-                  "O sistema calcula automaticamente a dose de calcário, projeta o balanço de Ca e Mg após cada colheita e gera o dashboard de monitoramento.",
-                color: "bg-olive/10 text-olive border-olive/20",
-                stepColor: "bg-olive text-white",
-              },
+              { value: "268", label: "Testes automatizados", sub: "domínio, aplicação e API" },
+              { value: "IAC 100", label: "Metodologia de calagem", sub: "Boletim IAC 100 e EMBRAPA Cerrados" },
+              { value: "4", label: "Algoritmos de previsão", sub: "validados contra numpy/statsmodels" },
+              { value: "2015", label: "Dados CEASA desde", sub: "46 unidades, 48 produtos" },
+              { value: "20.000", label: "Amostras por lote", sub: "em uma única chamada" },
             ].map((item, i) => (
-              <div
-                key={item.step}
-                data-reveal
-                data-delay={String(i + 1)}
-                className="relative"
-              >
-                <div className="flex items-center gap-3 mb-6">
-                  <div
-                    className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${item.stepColor}`}
-                  >
-                    {item.step}
-                  </div>
-                  <div
-                    className={`p-2.5 rounded-xl border flex items-center justify-center ${item.color}`}
-                  >
-                    {item.icon}
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold font-domine text-forest mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-beige-100 text-sm leading-relaxed font-outfit">
-                  {item.description}
-                </p>
+              <div key={item.label} data-reveal data-delay={String((i % 5) + 1)} className="bg-sand p-6 space-y-2">
+                <div className="text-2xl font-data font-semibold text-rust">{item.value}</div>
+                <div className="text-ink text-sm font-sans font-semibold">{item.label}</div>
+                <div className="text-ink/45 text-xs font-sans leading-snug">{item.sub}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════════════════ */}
-      {/* MÓDULO 02 — RADAR DE COTAÇÃO                                         */}
-      {/* ══════════════════════════════════════════════════════════════════════ */}
-
-      {/* ── Radar de Cotação — intro ────────────────────────────────────────── */}
-      <section className="py-16 px-6 bg-beige-50">
-        <div className="max-w-7xl mx-auto space-y-4">
-          <div
-            data-reveal
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-lime/15 border border-lime/25 rounded-full"
-          >
-            <div className="w-1.5 h-1.5 bg-lime rounded-full animate-pulse" />
-            <span className="text-olive text-xs font-bold tracking-wider uppercase font-outfit">
-              Radar de Cotação
-            </span>
-            <span className="px-1.5 py-0.5 bg-lime/20 text-olive text-[10px] font-bold rounded uppercase tracking-wide font-outfit">
-              Novo
-            </span>
-          </div>
-          <h2
-            data-reveal
-            data-delay="1"
-            className="text-3xl lg:text-5xl font-bold font-domine text-forest leading-tight max-w-2xl"
-          >
-            Saiba o melhor momento{" "}
-            <span className="text-olive">para colher e vender</span>
-          </h2>
-          <p
-            data-reveal
-            data-delay="2"
-            className="text-beige-100 text-lg font-outfit leading-relaxed max-w-2xl"
-          >
-            Cotações CEASA, projeção de preços e recomendação inteligente
-            — tudo em um painel integrado ao seu planejamento de safra.
-          </p>
-        </div>
-      </section>
-
-      {/* ── Radar de Cotação — Showcase ─────────────────────────────────────── */}
-      <section
-        id="radar"
-        className="py-16 px-6 bg-beige-50 relative overflow-hidden"
-      >
-        <div className="absolute inset-0 bg-dot-pattern-light pointer-events-none" />
-        <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Price cards mock — left side */}
-            <div className="order-2 lg:order-1 grid grid-cols-1 gap-4">
-              {/* Ranked opportunity card */}
-              <div
-                data-reveal
-                className="bg-lime/10 border border-lime/25 rounded-2xl p-5 flex items-start gap-4"
-              >
-                <div className="w-8 h-8 rounded bg-lime/30 flex items-center justify-center flex-shrink-0 font-bold font-outfit text-olive text-sm">
-                  #1
-                </div>
-                <div>
-                  <div className="text-olive text-xs font-bold uppercase tracking-wider font-outfit mb-1">
-                    Tomate · CEAGESP
-                  </div>
-                  <div className="text-forest font-bold font-domine text-lg">
-                    R$ 4,80/kg · tendência de alta
-                  </div>
-                  <div className="text-beige-100 text-sm font-outfit mt-1">
-                    Por quê? Maior preço esperado e tendência de alta clara,
-                    mesmo com risco médio.
-                  </div>
-                </div>
-              </div>
-
-              {/* Price trend row */}
-              <div
-                data-reveal
-                data-delay="1"
-                className="grid grid-cols-2 gap-3"
-              >
-                <div className="bg-white rounded-xl p-4 border border-beige-75">
-                  <div className="text-beige-100 text-xs font-outfit mb-1">
-                    Batata Inglesa · CEASA MG
-                  </div>
-                  <div className="text-forest font-bold font-domine text-xl">
-                    R$ 2,90/kg
-                  </div>
-                  <div className="text-olive text-xs font-outfit mt-1 font-semibold">
-                    +3,2% vs. média
-                  </div>
-                </div>
-                <div className="bg-white rounded-xl p-4 border border-beige-75">
-                  <div className="text-beige-100 text-xs font-outfit mb-1">
-                    Tomate · CEAGESP
-                  </div>
-                  <div className="text-forest font-bold font-domine text-xl">
-                    R$ 4,80/kg
-                  </div>
-                  <div className="text-red-400 text-xs font-outfit mt-1 font-semibold">
-                    −1,1% vs. média
-                  </div>
-                </div>
-              </div>
-
-              {/* Comparison verdict mock */}
-              <div
-                data-reveal
-                data-delay="2"
-                className="bg-white rounded-xl p-5 border border-beige-75"
-              >
-                <div className="text-beige-100 text-xs font-outfit mb-2 uppercase tracking-wider">
-                  Comparação
-                </div>
-                <div className="text-forest text-sm font-outfit leading-relaxed">
-                  Tomate em CEAGESP aparece à frente: maior preço esperado e
-                  tendência de alta clara. Se prefere segurança, Batata
-                  Inglesa em CEASA MG tem o menor risco do trio.
-                </div>
-              </div>
-            </div>
-
-            {/* Text — right side */}
-            <div className="order-1 lg:order-2 space-y-8">
-              <div className="space-y-5">
-                {[
-                  {
-                    label: "Cotações CEASA",
-                    desc: "Preços médios por unidade e produto, atualizados periodicamente.",
-                  },
-                  {
-                    label: "Projeção de preços",
-                    desc: "Estimativa de preço para os próximos dias com base em dados históricos.",
-                  },
-                  {
-                    label: "Ranking de oportunidades",
-                    desc: "Compare produto, mercado e janela de colheita lado a lado, ranqueados por preço esperado, tendência e risco.",
-                  },
-                  {
-                    label: "Justificativa por comparação",
-                    desc: 'Cada posição no ranking vem com o "por quê" — a razão concreta que a coloca à frente ou atrás das demais.',
-                  },
-                ].map((item) => (
-                  <div key={item.label} className="flex gap-3">
-                    <div className="w-5 h-5 rounded-full bg-lime/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <IconCheck className="w-3 h-3 text-olive" />
-                    </div>
-                    <div>
-                      <span className="text-forest font-semibold text-sm font-outfit">
-                        {item.label}
-                      </span>
-                      <span className="text-beige-100 text-sm font-outfit">
-                        {" "}
-                        — {item.desc}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Como funciona — Radar de Cotação ────────────────────────────────── */}
-      <section className="py-24 px-6 bg-beige">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <div
-              data-reveal
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-lime/15 border border-lime/25 rounded-full"
-            >
-              <IconTrendUp className="w-3.5 h-3.5 text-olive" />
-              <span className="text-olive text-xs font-bold tracking-wider uppercase font-outfit">
-                Radar de Cotação · Como funciona
-              </span>
-            </div>
-            <h2 className="text-3xl lg:text-5xl font-bold font-domine text-forest">
-              Do produto ao preço ideal{" "}
-              <span className="text-olive">em três cliques</span>
-            </h2>
-            <p className="text-beige-100 text-lg max-w-2xl mx-auto font-outfit">
-              Consulte, projete e decida — tudo em um painel integrado à sua
-              operação.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-12 relative">
-            {[
-              {
-                step: "01",
-                icon: <IconSearch className="w-6 h-6" />,
-                title: "Selecione produto e região",
-                description:
-                  "Escolha o produto (tomate, batata, cebola...) e o CEASA de referência. O sistema carrega as cotações históricas automaticamente.",
-                color: "bg-lime/15 text-olive border-lime/20",
-                stepColor: "bg-forest text-white",
-              },
-              {
-                step: "02",
-                icon: <IconBarChart className="w-6 h-6" />,
-                title: "Veja um ranking de produto",
-                description:
-                  "O sistema calcula a projeção de preço para os próximos 30 dias com base em dados históricos.",
-                color: "bg-moss/10 text-forest border-moss/15",
-                stepColor: "bg-moss text-white",
-              },
-              {
-                step: "03",
-                icon: <IconBolt className="w-6 h-6" />,
-                title: "Compare e tome a decisão correta",
-                description:
-                  "O sistema classifica o momento como Excelente, Neutro ou Atenção — com justificativa baseada em dados históricos e tendência calculada.",
-                color: "bg-olive/10 text-olive border-olive/20",
-                stepColor: "bg-olive text-white",
-              },
-            ].map((item, i) => (
-              <div
-                key={item.step}
-                data-reveal
-                data-delay={String(i + 1)}
-                className="relative"
-              >
-                <div className="flex items-center gap-3 mb-6">
-                  <div
-                    className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${item.stepColor}`}
-                  >
-                    {item.step}
-                  </div>
-                  <div
-                    className={`p-2.5 rounded-xl border flex items-center justify-center ${item.color}`}
-                  >
-                    {item.icon}
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold font-domine text-forest mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-beige-100 text-sm leading-relaxed font-outfit">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Why Agristato ──────────────────────────────────────────────────── */}
-      <section id="sobre" className="py-24 px-6 bg-beige-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <div
-                data-reveal
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-lime/15 border border-lime/25 rounded-full"
-              >
-                <span className="text-olive text-xs font-bold tracking-wider uppercase font-outfit">
-                  Por que Agristato
-                </span>
-              </div>
-              <h2 className="text-3xl lg:text-5xl font-bold font-domine text-forest leading-tight">
-                Chega de planilhas.
-                <br />
-                <span className="text-olive">Mais tempo no campo.</span>
-              </h2>
-              <p className="text-beige-100 text-lg leading-relaxed font-outfit">
-                Agrônomos e produtores perdem horas por safra consolidando
-                laudos, recalculando doses e montando planos em planilhas. O
-                Agristato automatiza tudo isso — com rigor técnico e resultados
-                auditáveis.
-              </p>
-
-              <div className="grid grid-cols-2 gap-6 pt-4">
-                {[
-                  { metric: "−80%", desc: "Tempo em planilhas" },
-                  { metric: "100%", desc: "Talhões monitorados" },
-                  { metric: "Zero", desc: "Erros de cálculo" },
-                  { metric: "+18", desc: "Meses de planejamento" },
-                ].map((item) => (
-                  <div key={item.desc} className="space-y-1">
-                    <div className="text-3xl font-bold font-domine text-forest">
-                      {item.metric}
-                    </div>
-                    <div className="text-sm text-beige-100 font-outfit">
-                      {item.desc}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              {[
-                {
-                  before: "Copia e cola laudo do laboratório na planilha",
-                  after: "Upload do arquivo → dados prontos em segundos",
-                },
-                {
-                  before: "Calcula dose de calcário manualmente por talhão",
-                  after: "Sistema aplica fórmula V% automaticamente",
-                },
-                {
-                  before: "Sem visibilidade do Ca e Mg após a colheita",
-                  after: "Dashboard projeta nutrientes para cada safra",
-                },
-                {
-                  before: "Consulta preço do CEASA em planilhas separadas",
-                  after: "Radar de Cotação indica o melhor momento para vender",
-                },
-              ].map((row, i) => (
-                <div
-                  key={row.before}
-                  data-reveal
-                  data-delay={String(i + 1)}
-                  className="grid grid-cols-2 gap-3"
-                >
-                  <div className="bg-red-50 border border-red-100 rounded-xl p-4">
-                    <div className="text-red-400 text-xs font-bold mb-1.5 font-outfit uppercase tracking-wider">
-                      Antes
-                    </div>
-                    <p className="text-red-700 text-sm leading-relaxed font-outfit">
-                      {row.before}
-                    </p>
-                  </div>
-                  <div className="bg-lime/10 border border-lime/20 rounded-xl p-4">
-                    <div className="text-olive text-xs font-bold mb-1.5 font-outfit uppercase tracking-wider">
-                      Com Agristato
-                    </div>
-                    <p className="text-forest text-sm leading-relaxed font-outfit">
-                      {row.after}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Wave className="bg-beige-50 text-moss" />
-
-      {/* ── CTA Final ──────────────────────────────────────────────────────── */}
-      <section
-        ref={ctaRef}
-        id="lista-espera"
-        className="py-24 px-6 bg-moss relative overflow-hidden"
-      >
+      {/* ══════════════════════════════════════════════════════════════════ */}
+      {/* 05 — PRESCRIÇÃO                                                     */}
+      {/* ══════════════════════════════════════════════════════════════════ */}
+      <section ref={ctaRef} id="lista-espera" className="py-24 px-6 bg-loam relative overflow-hidden">
         <div className="absolute inset-0 bg-dot-pattern opacity-40 pointer-events-none" />
         <div className="relative z-10 max-w-3xl mx-auto text-center space-y-8">
-          <div
-            data-reveal
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-lime/15 border border-lime/25 rounded-full"
-          >
-            <span className="text-lime text-xs font-bold tracking-wider uppercase font-outfit">
-              Lista de espera
-            </span>
-          </div>
-          <h2
-            data-reveal
-            data-delay="1"
-            className="text-3xl lg:text-5xl font-bold font-domine text-white leading-tight"
-          >
-            Garanta seu acesso <span className="text-lime">antecipado</span>
+          <span className="font-data text-xs text-ochre uppercase tracking-wider">05 · Prescrição</span>
+          <h2 data-reveal data-delay="1" className="text-3xl lg:text-5xl font-display font-medium text-white leading-tight">
+            Reserve sua vaga para a <span className="italic text-ochre">primeira prescrição.</span>
           </h2>
-          <p
-            data-reveal
-            data-delay="2"
-            className="text-zest/70 text-lg font-outfit leading-relaxed"
-          >
-            Seja um dos primeiros a usar o Agristato. Quem entra na lista de
-            espera recebe acesso prioritário e condições especiais de
-            lançamento.
+          <p data-reveal data-delay="2" className="text-parchment/70 text-lg font-sans leading-relaxed">
+            Seja um dos primeiros a usar o Agristato. Quem entra na lista de espera recebe acesso
+            prioritário e condições especiais de lançamento.
           </p>
 
           <div className="max-w-xl mx-auto">
-            <EmailForm
-              onSubmit={handleSubmitCta(onEmailSubmit)}
-              isLoading={isLoading}
-              errors={errorsCta}
-              register={registerCta}
-              variant="dark"
-            />
+            <EmailForm onSubmit={handleSubmitCta(onEmailSubmit)} isLoading={isLoading} errors={errorsCta} register={registerCta} variant="dark" />
           </div>
 
           <div className="flex items-center justify-center gap-3">
             {isLoadingCount ? (
               <div className="w-32 h-4 bg-white/10 rounded animate-pulse" />
             ) : (
-              <p className="text-zest/60 text-sm font-outfit">
-                <span className="font-bold text-lime text-lg font-domine">
-                  {userCount}
-                </span>{" "}
+              <p className="text-parchment/60 text-sm font-sans">
+                <span className="font-bold text-ochre text-lg font-data">{userCount}</span>{" "}
                 fazendas já garantiram seu lugar
               </p>
             )}
@@ -1878,52 +1027,35 @@ export default function Home() {
       </section>
 
       {/* ── Footer ─────────────────────────────────────────────────────────── */}
-      <footer className="bg-moss border-t border-lime/20 py-14 px-6">
+      <footer className="bg-loam border-t border-white/10 py-14 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-10 mb-12">
-            {/* Brand */}
             <div className="md:col-span-2 space-y-4">
               <div className="flex items-center gap-2.5">
-                <Image
-                  src="/logo-white.svg"
-                  alt="Agristato"
-                  width={32}
-                  height={32}
-                  className="w-8 h-8"
-                />
-                <span className="logo font-bold text-lg text-white tracking-tight">
-                  Agristato
-                </span>
+                <Image src="/logo-white.svg" alt="Agristato" width={32} height={32} className="w-8 h-8" />
+                <span className="font-display font-semibold text-lg text-white tracking-tight">Agristato</span>
               </div>
-              <p className="text-zest/50 text-sm leading-relaxed font-outfit max-w-xs">
-                Plataforma de análise de solo e inteligência de mercado para
-                agricultura de precisão.
+              <p className="text-parchment/50 text-sm leading-relaxed font-sans max-w-xs">
+                Análise de solo e inteligência de mercado para agricultura de precisão — com fórmulas
+                citadas, não caixas-pretas.
               </p>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-lime/10 border border-lime/20 rounded-full">
-                <div className="w-1.5 h-1.5 bg-lime rounded-full animate-pulse" />
-                <span className="text-lime text-xs font-outfit font-medium">
-                  Lançamento 31 Julho, 2026
-                </span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-clay/10 border border-clay/25 rounded-full">
+                <div className="w-1.5 h-1.5 bg-clay rounded-full" />
+                <span className="font-data text-ochre text-xs">Lançamento 31 Julho, 2026</span>
               </div>
             </div>
 
-            {/* Platform */}
             <div className="space-y-4">
-              <h4 className="text-white text-sm font-semibold font-outfit">
-                Plataforma
-              </h4>
+              <h4 className="text-white text-sm font-semibold font-sans">Plataforma</h4>
               <ul className="space-y-2.5">
                 {[
                   { label: "Análise de Solo", href: "#analise-solo" },
                   { label: "Radar de Cotação", href: "#radar" },
-                  { label: "Por que Agristato", href: "#sobre" },
+                  { label: "Validação", href: "#validacao" },
                   { label: "Lista de espera", href: "#lista-espera" },
                 ].map((item) => (
                   <li key={item.label}>
-                    <a
-                      href={item.href}
-                      className="text-zest/50 text-sm hover:text-zest/80 transition-colors font-outfit"
-                    >
+                    <a href={item.href} className="text-parchment/50 text-sm hover:text-parchment/80 transition-colors font-sans">
                       {item.label}
                     </a>
                   </li>
@@ -1931,40 +1063,21 @@ export default function Home() {
               </ul>
             </div>
 
-            {/* Legal */}
             <div className="space-y-4">
-              <h4 className="text-white text-sm font-semibold font-outfit">
-                Legal
-              </h4>
+              <h4 className="text-white text-sm font-semibold font-sans">Legal</h4>
               <ul className="space-y-2.5">
                 <li>
-                  <Link
-                    href="/privacy-policy"
-                    className="text-zest/50 text-sm hover:text-zest/80 transition-colors font-outfit"
-                  >
+                  <Link href="/privacy-policy" className="text-parchment/50 text-sm hover:text-parchment/80 transition-colors font-sans">
                     Política de Privacidade
                   </Link>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-zest/50 text-sm hover:text-zest/80 transition-colors font-outfit"
-                  >
-                    Termos de Uso
-                  </a>
                 </li>
               </ul>
             </div>
           </div>
 
-          {/* Bottom bar */}
           <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-zest/40 text-sm font-outfit">
-              © 2026 Agristato. Todos os direitos reservados.
-            </p>
-            <p className="text-zest/30 text-xs font-outfit">
-              Feito com precisão para o agronegócio brasileiro
-            </p>
+            <p className="text-parchment/40 text-sm font-sans">© 2026 Agristato. Todos os direitos reservados.</p>
+            <p className="text-parchment/30 text-xs font-sans">Feito com precisão para o agronegócio brasileiro</p>
           </div>
         </div>
       </footer>
@@ -1980,20 +1093,9 @@ export default function Home() {
         }}
         userCount={userCount}
       />
-      <SurveyModal
-        isOpen={showSurveyModal}
-        onClose={handleCloseSurveyModal}
-        onComplete={handleSurveyComplete}
-      />
-      <ThankYouModal
-        isOpen={showThankYouModal}
-        onClose={handleCloseThankYouModal}
-      />
-      <DuplicateEmailModal
-        isOpen={showDuplicateEmailModal}
-        onClose={() => setShowDuplicateEmailModal(false)}
-        email={duplicateEmail}
-      />
+      <SurveyModal isOpen={showSurveyModal} onClose={handleCloseSurveyModal} onComplete={handleSurveyComplete} />
+      <ThankYouModal isOpen={showThankYouModal} onClose={handleCloseThankYouModal} />
+      <DuplicateEmailModal isOpen={showDuplicateEmailModal} onClose={() => setShowDuplicateEmailModal(false)} email={duplicateEmail} />
     </div>
   );
 }

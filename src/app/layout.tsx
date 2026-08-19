@@ -1,28 +1,34 @@
 import type { Metadata } from "next";
-import { Domine, Geist, Sen } from "next/font/google";
+import { Fraunces, IBM_Plex_Mono, Public_Sans } from "next/font/google";
 import "./globals.css";
 import { PostHogProvider } from "@/components/PostHogProvider";
 
-// Geist replaces Outfit to align with the app's design system
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Display — headings, used with restraint
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
 });
 
-const domine = Domine({
-  variable: "--font-domine",
+// Body — plain, legible, a little bureaucratic (fits the technical-bulletin register)
+const publicSans = Public_Sans({
+  variable: "--font-public-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const sen = Sen({
-  variable: "--font-sen",
+// Data — every number on the page (doses, %, R$) reads like an instrument readout
+const plexMono = IBM_Plex_Mono({
+  variable: "--font-plex-mono",
   subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
   title: "Agristato",
-  description: "Transforme dados do solo em decisões inteligentes",
+  description:
+    "Da amostra ao talhão, em uma dose só. Calagem, gessagem, adubação e inteligência de mercado com o rigor do Boletim IAC 100 e da EMBRAPA Cerrados.",
   icons: {
     icon: "/logo.svg",
     shortcut: "/logo.svg",
@@ -37,7 +43,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${geistSans.variable} ${domine.variable} ${sen.variable} antialiased`}>
+      <body
+        className={`${fraunces.variable} ${publicSans.variable} ${plexMono.variable} antialiased`}
+      >
         <PostHogProvider>{children}</PostHogProvider>
       </body>
     </html>
