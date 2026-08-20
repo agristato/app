@@ -1,28 +1,25 @@
 import type { Metadata } from "next";
-import { Fraunces, IBM_Plex_Mono, Public_Sans } from "next/font/google";
+import { Geist, Geist_Mono, Sen } from "next/font/google";
 import "./globals.css";
 import { PostHogProvider } from "@/components/PostHogProvider";
 
-// Display — headings, used with restraint
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+// The exact font stack the product app itself loads (app/layout.tsx) —
+// Sen for the brand wordmark and display type, Geist for body, Geist Mono
+// for data. The landing page should look like it belongs to the product.
+const sen = Sen({
+  variable: "--font-sen",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
+  weight: ["400", "700", "800"],
 });
 
-// Body — plain, legible, a little bureaucratic (fits the technical-bulletin register)
-const publicSans = Public_Sans({
-  variable: "--font-public-sans",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
 });
 
-// Data — every number on the page (doses, %, R$) reads like an instrument readout
-const plexMono = IBM_Plex_Mono({
-  variable: "--font-plex-mono",
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -43,9 +40,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body
-        className={`${fraunces.variable} ${publicSans.variable} ${plexMono.variable} antialiased`}
-      >
+      <body className={`${sen.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <div
+          className="grain-overlay"
+          aria-hidden
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+          }}
+        />
         <PostHogProvider>{children}</PostHogProvider>
       </body>
     </html>

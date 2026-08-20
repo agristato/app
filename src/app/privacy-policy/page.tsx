@@ -7,21 +7,21 @@ export default function PrivacyPolicy() {
       <header className="max-w-4xl mx-auto px-4 md:px-8 py-8">
         <Link href="/" className="inline-flex items-center gap-2.5">
           <Image src="/logo.svg" alt="Agristato" width={40} height={40} className="w-8 h-8 md:w-10 md:h-10" />
-          <span className="font-display font-semibold text-xl md:text-2xl text-rust tracking-tight">
+          <span className="font-logo font-bold text-xl md:text-2xl text-forest tracking-tight">
             Agristato
           </span>
         </Link>
       </header>
 
       <main className="px-4 pb-16">
-        <div className="max-w-4xl mx-auto bg-sand border border-parchment-75 rounded-lg p-6 md:p-10 lg:p-12">
-          <span className="font-data text-xs text-rust uppercase tracking-wider">Legal</span>
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-display font-medium text-ink mt-2 mb-6">
+        <div className="max-w-4xl mx-auto bg-white border border-parchment-300 rounded-2xl p-6 md:p-10 lg:p-12">
+          <span className="font-data text-xs text-forest uppercase tracking-wider">Legal</span>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-display font-extrabold text-ink mt-2 mb-6">
             Política de Privacidade
           </h1>
 
-          <div className="space-y-6 text-ink/70 font-sans">
-            <p className="text-sm text-ink/45 font-data">
+          <div className="space-y-6 text-ink/65 font-sans">
+            <p className="text-sm text-ink/40 font-data">
               Última atualização: {new Date().toLocaleDateString("pt-BR")}
             </p>
 
@@ -172,7 +172,7 @@ export default function PrivacyPolicy() {
               <p>
                 Caso não seja possível resolver sua questão conosco, você pode contatar a ANPD
                 através do canal oficial:{" "}
-                <a href="https://www.gov.br/anpd" className="text-rust underline hover:text-clay">
+                <a href="https://www.gov.br/anpd" className="text-forest underline hover:text-forest-deep">
                   https://www.gov.br/anpd
                 </a>
               </p>
@@ -181,7 +181,7 @@ export default function PrivacyPolicy() {
 
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-rust hover:text-clay font-semibold font-sans mt-8"
+            className="inline-flex items-center gap-2 text-forest hover:text-forest-deep font-semibold font-sans mt-8"
           >
             ← Voltar ao início
           </Link>

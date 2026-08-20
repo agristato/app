@@ -4,9 +4,11 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Single source of truth for design tokens (Tailwind v4 CSS-first theme).
- * tailwind.config.ts is NOT wired in via @config — it plays no part in
- * utility generation — so everything the build actually reads lives here.
+ * Design tokens, anchored to the real product brand — the exact palette
+ * the app itself ships (app/globals.css, DaisyUI theme "agristato") and
+ * the exact logo mark (three diagonal forest-green rows). Nothing here is
+ * invented; it's the same green/earth/gold trio a logged-in user already
+ * sees, extended into a landing page.
  */
 @theme inline {
   /* ── shadcn/system tokens (consumed by components/ui/*) ── */
@@ -46,37 +48,32 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* ── Agristato brand — a soil horizon profile, not a SaaS palette ──
-     humus (dark topsoil) → clay (oxidized subsoil) → ochre (saprolite)
-     → parchment (weathered limestone) → moss (the crop itself)         */
-  --color-humus: #241a12;
-  --color-loam: #33261a;
+  /* ── The real Agristato palette (matches app/globals.css exactly) ── */
+  --color-forest: #39833c;
+  --color-forest-deep: #1a3320;
+  --color-forest-night: #0e2213;
+  --color-earth: #6b4633;
+  --color-gold: #f2c14e;
+  --color-gold-deep: #8a6a1f;
 
-  --color-clay: #c1663f;
-  --color-rust: #8a3d22;
+  --color-parchment: #fbfdfc;
+  --color-parchment-200: #f3f7f5;
+  --color-parchment-300: #e6eee9;
+  --color-ink: #0f1a14;
 
-  --color-ochre: #dba54c;
-  --color-gold: #96691f;
+  --color-status-good: #1f8a4c;
+  --color-status-warn: #f2994a;
+  --color-status-bad: #b41c2b;
 
-  --color-moss: #4c6b3f;
-  --color-sprout: #8fae7c;
-
-  --color-alert: #a3372a;
-
-  --color-parchment: #f7f1e5;
-  --color-parchment-75: #e6dac2;
-  --color-parchment-100: #cbb98f;
-  --color-sand: #fdfbf5;
-
-  --color-ink: #1c1710;
-
-  /* ── Type roles ──
-     display: Fraunces (headings, used with restraint)
-     sans:    Public Sans (body — plain, legible, a little bureaucratic)
-     mono:    IBM Plex Mono (every number on the page — doses, %, R$)     */
-  --font-display: var(--font-fraunces);
-  --font-sans: var(--font-public-sans);
-  --font-mono: var(--font-plex-mono);
+  /* ── Type roles — the exact stack the app itself loads ──
+     logo:    Sen Bold — reserved for the "Agristato" wordmark only
+     display: Geist, heavy weight — section headings
+     sans:    Geist (body — matches the app)
+     mono:    Geist Mono (every number on the page — matches the app)     */
+  --font-logo: var(--font-sen);
+  --font-display: var(--font-geist-sans);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
 /* ── Base styles ─────────────────────────────────────────────────────── */
@@ -85,86 +82,87 @@ html {
 }
 
 body {
-  font-family: var(--font-public-sans), "Public Sans", system-ui, sans-serif;
-  background-color: #f7f1e5;
-  color: #1c1710;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  background-color: #fbfdfc;
+  color: #0f1a14;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-fraunces), Georgia, serif;
-  font-weight: 560;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-weight: 800;
   text-wrap: balance;
+  letter-spacing: -0.02em;
 }
 
 .font-data {
-  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
   font-variant-numeric: tabular-nums;
 }
 
 :root {
-  --radius: 0.5rem;
-  --background: #f7f1e5;
-  --foreground: #1c1710;
-  --card: #fdfbf5;
-  --card-foreground: #1c1710;
-  --popover: #fdfbf5;
-  --popover-foreground: #1c1710;
-  --primary: #8a3d22;
-  --primary-foreground: #fdfbf5;
-  --secondary: #e6dac2;
-  --secondary-foreground: #1c1710;
-  --muted: #e6dac2;
-  --muted-foreground: #7a6b53;
-  --accent: #dba54c;
-  --accent-foreground: #241a12;
-  --destructive: #a3372a;
-  --border: #d9caa8;
-  --input: #e6dac2;
-  --ring: #c1663f;
-  --chart-1: #c1663f;
-  --chart-2: #dba54c;
-  --chart-3: #4c6b3f;
-  --chart-4: #8a3d22;
-  --chart-5: #96691f;
-  --sidebar: #f7f1e5;
-  --sidebar-foreground: #1c1710;
-  --sidebar-primary: #241a12;
-  --sidebar-primary-foreground: #fdfbf5;
-  --sidebar-accent: #e6dac2;
-  --sidebar-accent-foreground: #1c1710;
-  --sidebar-border: #d9caa8;
-  --sidebar-ring: #c1663f;
+  --radius: 1rem;
+  --background: #fbfdfc;
+  --foreground: #0f1a14;
+  --card: #ffffff;
+  --card-foreground: #0f1a14;
+  --popover: #ffffff;
+  --popover-foreground: #0f1a14;
+  --primary: #39833c;
+  --primary-foreground: #f7f9fa;
+  --secondary: #f3f7f5;
+  --secondary-foreground: #0f1a14;
+  --muted: #f3f7f5;
+  --muted-foreground: #5b6b62;
+  --accent: #f2c14e;
+  --accent-foreground: #0f1a14;
+  --destructive: #b41c2b;
+  --border: #e6eee9;
+  --input: #f3f7f5;
+  --ring: #39833c;
+  --chart-1: #39833c;
+  --chart-2: #f2c14e;
+  --chart-3: #6b4633;
+  --chart-4: #1f8a4c;
+  --chart-5: #f2994a;
+  --sidebar: #fbfdfc;
+  --sidebar-foreground: #0f1a14;
+  --sidebar-primary: #0f1a14;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f3f7f5;
+  --sidebar-accent-foreground: #0f1a14;
+  --sidebar-border: #e6eee9;
+  --sidebar-ring: #39833c;
 }
 
 .dark {
-  --background: #241a12;
-  --foreground: #f7f1e5;
-  --card: #33261a;
-  --card-foreground: #f7f1e5;
-  --popover: #33261a;
-  --popover-foreground: #f7f1e5;
-  --primary: #c1663f;
-  --primary-foreground: #241a12;
-  --secondary: #33261a;
-  --secondary-foreground: #dba54c;
-  --muted: #33261a;
-  --muted-foreground: #cbb98f;
-  --accent: #dba54c;
-  --accent-foreground: #241a12;
-  --destructive: #d16656;
-  --border: rgba(247,241,229,0.12);
-  --input: rgba(247,241,229,0.16);
-  --ring: #c1663f;
-  --sidebar: #33261a;
-  --sidebar-foreground: #f7f1e5;
-  --sidebar-primary: #c1663f;
-  --sidebar-primary-foreground: #241a12;
-  --sidebar-accent: #33261a;
-  --sidebar-accent-foreground: #dba54c;
-  --sidebar-border: rgba(247,241,229,0.12);
-  --sidebar-ring: #c1663f;
+  --background: #0e2213;
+  --foreground: #f7f9fa;
+  --card: #1a3320;
+  --card-foreground: #f7f9fa;
+  --popover: #1a3320;
+  --popover-foreground: #f7f9fa;
+  --primary: #f2c14e;
+  --primary-foreground: #0e2213;
+  --secondary: #1a3320;
+  --secondary-foreground: #f7f9fa;
+  --muted: #1a3320;
+  --muted-foreground: #a9c2ae;
+  --accent: #f2c14e;
+  --accent-foreground: #0e2213;
+  --destructive: #d1495b;
+  --border: rgba(247,249,250,0.12);
+  --input: rgba(247,249,250,0.16);
+  --ring: #f2c14e;
+  --sidebar: #1a3320;
+  --sidebar-foreground: #f7f9fa;
+  --sidebar-primary: #f2c14e;
+  --sidebar-primary-foreground: #0e2213;
+  --sidebar-accent: #1a3320;
+  --sidebar-accent-foreground: #f7f9fa;
+  --sidebar-border: rgba(247,249,250,0.12);
+  --sidebar-ring: #f2c14e;
 }
 
 @layer base {
@@ -176,15 +174,25 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Dot pattern — soil texture, not neon grid */
-.bg-dot-pattern {
-  background-image: radial-gradient(circle, rgba(219, 165, 76, 0.14) 1px, transparent 1px);
-  background-size: 26px 26px;
+/* Field-row texture — faint diagonal furrows, the logo's own geometry */
+.bg-furrow-pattern {
+  background-image: repeating-linear-gradient(
+    115deg,
+    rgba(242, 193, 78, 0.07) 0px,
+    rgba(242, 193, 78, 0.07) 2px,
+    transparent 2px,
+    transparent 34px
+  );
 }
 
-.bg-dot-pattern-light {
-  background-image: radial-gradient(circle, rgba(36, 26, 18, 0.08) 1px, transparent 1px);
-  background-size: 26px 26px;
+.bg-furrow-pattern-dim {
+  background-image: repeating-linear-gradient(
+    115deg,
+    rgba(15, 26, 20, 0.05) 0px,
+    rgba(15, 26, 20, 0.05) 2px,
+    transparent 2px,
+    transparent 34px
+  );
 }
 
 /* Smooth transitions — only on interactive elements to avoid conflicting with scroll-reveal */
@@ -195,19 +203,19 @@ a, button, [role="button"],
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Custom checkbox / radio styling — brand tokens instead of hardcoded hex */
+/* Custom checkbox / radio styling — brand token instead of hardcoded hex */
 [data-state="checked"] .lucide-check {
   color: white !important;
   fill: white !important;
 }
 
-.checkbox-clay[data-state="checked"] {
-  background-color: #8a3d22 !important;
-  border-color: #8a3d22 !important;
+.checkbox-forest[data-state="checked"] {
+  background-color: #39833c !important;
+  border-color: #39833c !important;
   color: white !important;
 }
 
-.checkbox-clay[data-state="checked"] svg {
+.checkbox-forest[data-state="checked"] svg {
   color: white !important;
 }
 
@@ -217,8 +225,8 @@ a, button, [role="button"],
 }
 
 [data-slot="radio-group-item"][data-state="checked"] {
-  background-color: #8a3d22 !important;
-  border-color: #8a3d22 !important;
+  background-color: #39833c !important;
+  border-color: #39833c !important;
 }
 
 [data-slot="radio-group-item"][data-state="checked"] svg {
@@ -248,7 +256,7 @@ a, button, [role="button"],
   -webkit-backdrop-filter: blur(12px);
 }
 
-/* ── Scroll Reveal ───────────────────────────────────────────────────────── */
+/* ── Scroll Reveal (IntersectionObserver-driven, no scroll listeners) ───── */
 [data-reveal] {
   opacity: 0;
   transform: translateY(32px);
@@ -257,7 +265,7 @@ a, button, [role="button"],
 }
 [data-reveal="left"]  { transform: translateX(-32px); }
 [data-reveal="right"] { transform: translateX(32px);  }
-[data-reveal="scale"] { transform: scale(0.95) translateY(20px); }
+[data-reveal="scale"] { transform: scale(0.9) skewX(-10deg); }
 [data-reveal].in-view {
   opacity: 1;
   transform: none;
@@ -269,37 +277,33 @@ a, button, [role="button"],
 [data-delay="5"] { transition-delay: 400ms; }
 [data-delay="6"] { transition-delay: 480ms; }
 
-/* ── Parallax hero background ────────────────────────────────────────────── */
-.parallax-hero-bg {
-  will-change: transform;
-  transform: translateY(var(--parallax-y, 0));
-}
-
-/* ── Plot-boundary divider ───────────────────────────────────────────────
-   Replaces the generic wave-SVG divider. A thin, irregular contour line —
-   the same vocabulary as a talhão boundary (the polygon data the product
-   already stores for every field), not a decorative blob.                */
-.plot-divider {
+/* ── Furrow divider — a diagonal wedge between sections, echoing the ──────
+   logo's own three angled bars, with a gold seam at the cut.             */
+.furrow-divider {
   display: block;
   width: 100%;
-  height: 28px;
+  height: 96px;
   overflow: hidden;
   line-height: 0;
 }
-.plot-divider svg {
+.furrow-divider svg {
   display: block;
   width: 100%;
   height: 100%;
 }
-.plot-divider path {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1;
-  vector-effect: non-scaling-stroke;
+
+/* ── Fixed grain overlay — texture, never on a scrolling container ──────── */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  [data-reveal], .animate-fade-up, .parallax-hero-bg {
+  [data-reveal], .animate-fade-up {
     transition: none !important;
     animation: none !important;
     transform: none !important;

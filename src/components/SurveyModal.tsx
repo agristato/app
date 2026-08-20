@@ -126,7 +126,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
                 <RadioGroupItem
                   value="producer"
                   id="producer"
-                  className="border-parchment-75 data-[state=checked]:border-rust data-[state=checked]:bg-rust focus-visible:ring-clay/30"
+                  className="border-parchment-300 data-[state=checked]:border-forest data-[state=checked]:bg-forest focus-visible:ring-forest/30"
                   style={
                     watchedProfile === "producer"
                       ? { borderColor: "#8a3d22", backgroundColor: "#8a3d22" }
@@ -141,7 +141,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
                 <RadioGroupItem
                   value="consultant"
                   id="consultant"
-                  className="border-parchment-75 data-[state=checked]:border-rust data-[state=checked]:bg-rust focus-visible:ring-clay/30"
+                  className="border-parchment-300 data-[state=checked]:border-forest data-[state=checked]:bg-forest focus-visible:ring-forest/30"
                   style={
                     watchedProfile === "consultant"
                       ? { borderColor: "#8a3d22", backgroundColor: "#8a3d22" }
@@ -156,7 +156,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
                 <RadioGroupItem
                   value="agronomist"
                   id="agronomist"
-                  className="border-parchment-75 data-[state=checked]:border-rust data-[state=checked]:bg-rust focus-visible:ring-clay/30"
+                  className="border-parchment-300 data-[state=checked]:border-forest data-[state=checked]:bg-forest focus-visible:ring-forest/30"
                   style={
                     watchedProfile === "agronomist"
                       ? { borderColor: "#8a3d22", backgroundColor: "#8a3d22" }
@@ -171,7 +171,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
                 <RadioGroupItem
                   value="other"
                   id="other"
-                  className="border-parchment-75 data-[state=checked]:border-rust data-[state=checked]:bg-rust focus-visible:ring-clay/30"
+                  className="border-parchment-300 data-[state=checked]:border-forest data-[state=checked]:bg-forest focus-visible:ring-forest/30"
                   style={
                     watchedProfile === "other"
                       ? { borderColor: "#8a3d22", backgroundColor: "#8a3d22" }
@@ -187,7 +187,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
               <Input
                 {...register("customProfile")}
                 placeholder="Especifique seu perfil..."
-                className="mt-2 border-parchment-75 focus:border-rust focus:ring-clay/30 font-sans"
+                className="mt-2 border-parchment-300 focus:border-forest focus:ring-forest/30 font-sans"
               />
             )}
           </div>
@@ -208,7 +208,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
                 <RadioGroupItem
                   value="<500ha"
                   id="small"
-                  className="border-parchment-75 text-rust focus-visible:ring-clay/30"
+                  className="border-parchment-300 text-forest focus-visible:ring-forest/30"
                 />
                 <Label htmlFor="small" className="font-sans text-ink cursor-pointer">
                   &lt;500 hectares
@@ -218,7 +218,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
                 <RadioGroupItem
                   value="500-2000ha"
                   id="medium"
-                  className="border-parchment-75 text-rust focus-visible:ring-clay/30"
+                  className="border-parchment-300 text-forest focus-visible:ring-forest/30"
                 />
                 <Label htmlFor="medium" className="font-sans text-ink cursor-pointer">
                   500-2.000 hectares
@@ -228,7 +228,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
                 <RadioGroupItem
                   value="2000-10000ha"
                   id="large"
-                  className="border-parchment-75 text-rust focus-visible:ring-clay/30"
+                  className="border-parchment-300 text-forest focus-visible:ring-forest/30"
                 />
                 <Label htmlFor="large" className="font-sans text-ink cursor-pointer">
                   2.000-10.000 hectares
@@ -238,7 +238,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
                 <RadioGroupItem
                   value=">10000ha"
                   id="xlarge"
-                  className="border-parchment-75 text-rust focus-visible:ring-clay/30"
+                  className="border-parchment-300 text-forest focus-visible:ring-forest/30"
                 />
                 <Label htmlFor="xlarge" className="font-sans text-ink cursor-pointer">
                   &gt;10.000 hectares
@@ -252,7 +252,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
         return (
           <div className="space-y-6">
             <h3 className="text-xl font-semibold font-display">Principais culturas na fazenda?</h3>
-            <p className="text-sm text-ink/60">Marque até 3 opções</p>
+            <p className="text-sm text-ink/50">Marque até 3 opções</p>
             <div className="space-y-4">
               {["Soja", "Milho", "Feijão", "Algodão", "Cana", "Café", "Outro(s)"].map((crop) => (
                 <div key={crop} className="flex items-center space-x-3">
@@ -262,7 +262,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
                     onCheckedChange={(checked) =>
                       handleCropChange(crop.toLowerCase(), checked as boolean)
                     }
-                    className="checkbox-clay border-parchment-75 data-[state=checked]:bg-rust data-[state=checked]:border-rust data-[state=checked]:text-white focus-visible:ring-clay/30"
+                    className="checkbox-forest border-parchment-300 data-[state=checked]:bg-forest data-[state=checked]:border-forest data-[state=checked]:text-white focus-visible:ring-forest/30"
                     style={
                       selectedCrops.includes(crop.toLowerCase())
                         ? {
@@ -283,7 +283,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
               <Input
                 {...register("customCrops")}
                 placeholder="Qual cultura?"
-                className="mt-2 border-parchment-75 focus:border-rust focus:ring-clay/30 font-sans"
+                className="mt-2 border-parchment-300 focus:border-forest focus:ring-forest/30 font-sans"
               />
             )}
           </div>
@@ -313,7 +313,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
                 <RadioGroupItem
                   value="spreadsheets"
                   id="spreadsheets"
-                  className="border-parchment-75 data-[state=checked]:border-rust data-[state=checked]:bg-rust focus-visible:ring-clay/30"
+                  className="border-parchment-300 data-[state=checked]:border-forest data-[state=checked]:bg-forest focus-visible:ring-forest/30"
                   style={
                     watchedSoftware === "spreadsheets"
                       ? { borderColor: "#8a3d22", backgroundColor: "#8a3d22" }
@@ -328,7 +328,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
                 <RadioGroupItem
                   value="external_consultant"
                   id="consultant"
-                  className="border-parchment-75 data-[state=checked]:border-rust data-[state=checked]:bg-rust focus-visible:ring-clay/30"
+                  className="border-parchment-300 data-[state=checked]:border-forest data-[state=checked]:bg-forest focus-visible:ring-forest/30"
                   style={
                     watchedSoftware === "external_consultant"
                       ? { borderColor: "#8a3d22", backgroundColor: "#8a3d22" }
@@ -343,7 +343,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
                 <RadioGroupItem
                   value="no_other"
                   id="no_other"
-                  className="border-parchment-75 data-[state=checked]:border-rust data-[state=checked]:bg-rust focus-visible:ring-clay/30"
+                  className="border-parchment-300 data-[state=checked]:border-forest data-[state=checked]:bg-forest focus-visible:ring-forest/30"
                   style={
                     watchedSoftware === "no_other"
                       ? { borderColor: "#8a3d22", backgroundColor: "#8a3d22" }
@@ -358,7 +358,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
                 <RadioGroupItem
                   value="commercial_software"
                   id="commercial"
-                  className="border-parchment-75 data-[state=checked]:border-rust data-[state=checked]:bg-rust focus-visible:ring-clay/30"
+                  className="border-parchment-300 data-[state=checked]:border-forest data-[state=checked]:bg-forest focus-visible:ring-forest/30"
                   style={
                     watchedSoftware === "commercial_software"
                       ? { borderColor: "#8a3d22", backgroundColor: "#8a3d22" }
@@ -374,7 +374,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
               <Input
                 {...register("customSoftware")}
                 placeholder="Qual software?"
-                className="mt-2 border-parchment-75 focus:border-rust focus:ring-clay/30 font-sans"
+                className="mt-2 border-parchment-300 focus:border-forest focus:ring-forest/30 font-sans"
               />
             )}
           </div>
@@ -398,7 +398,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
                 <RadioGroupItem
                   value="cost"
                   id="cost"
-                  className="border-parchment-75 text-rust focus-visible:ring-clay/30"
+                  className="border-parchment-300 text-forest focus-visible:ring-forest/30"
                 />
                 <Label htmlFor="cost" className="font-sans text-ink cursor-pointer">
                   Custo
@@ -408,7 +408,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
                 <RadioGroupItem
                   value="logistics"
                   id="logistics"
-                  className="border-parchment-75 text-rust focus-visible:ring-clay/30"
+                  className="border-parchment-300 text-forest focus-visible:ring-forest/30"
                 />
                 <Label htmlFor="logistics" className="font-sans text-ink cursor-pointer">
                   Logística
@@ -418,7 +418,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
                 <RadioGroupItem
                   value="field_confidence"
                   id="confidence"
-                  className="border-parchment-75 text-rust focus-visible:ring-clay/30"
+                  className="border-parchment-300 text-forest focus-visible:ring-forest/30"
                 />
                 <Label htmlFor="confidence" className="font-sans text-ink cursor-pointer">
                   Confiança nos laudos
@@ -428,7 +428,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
                 <RadioGroupItem
                   value="time_shortage"
                   id="time"
-                  className="border-parchment-75 text-rust focus-visible:ring-clay/30"
+                  className="border-parchment-300 text-forest focus-visible:ring-forest/30"
                 />
                 <Label htmlFor="time" className="font-sans text-ink cursor-pointer">
                   Falta de tempo
@@ -438,7 +438,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
                 <RadioGroupItem
                   value="other"
                   id="other_challenge"
-                  className="border-parchment-75 text-rust focus-visible:ring-clay/30"
+                  className="border-parchment-300 text-forest focus-visible:ring-forest/30"
                 />
                 <Label
                   htmlFor="other_challenge"
@@ -452,7 +452,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
               <Input
                 {...register("customChallenge")}
                 placeholder="Especifique seu desafio..."
-                className="mt-2 border-parchment-75 focus:border-rust focus:ring-clay/30 font-sans"
+                className="mt-2 border-parchment-300 focus:border-forest focus:ring-forest/30 font-sans"
               />
             )}
           </div>
@@ -464,7 +464,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
             <h3 className="text-xl font-semibold font-display">
               Gostaria de participar do programa piloto fechado?
             </h3>
-            <p className="text-sm text-ink/60">
+            <p className="text-sm text-ink/50">
               Acesso antecipado, solução e plataforma com condições especiais.
             </p>
             <RadioGroup
@@ -478,11 +478,11 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
                 <RadioGroupItem
                   value="interested"
                   id="interested"
-                  className="border-parchment-75 text-rust focus-visible:ring-clay/30"
+                  className="border-parchment-300 text-forest focus-visible:ring-forest/30"
                 />
                 <Label
                   htmlFor="interested"
-                  className="text-rust font-bold font-sans cursor-pointer"
+                  className="text-forest font-bold font-sans cursor-pointer"
                 >
                   Sim, tenho interesse
                 </Label>
@@ -491,7 +491,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
                 <RadioGroupItem
                   value="prefer_wait"
                   id="wait"
-                  className="border-parchment-75 text-rust focus-visible:ring-clay/30"
+                  className="border-parchment-300 text-forest focus-visible:ring-forest/30"
                 />
                 <Label htmlFor="wait" className="font-sans text-ink cursor-pointer">
                   Não, prefiro aguardar o lançamento
@@ -523,25 +523,25 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
           <h2 className="text-lg font-semibold font-display text-ink">
             {currentStepData.title}
           </h2>
-          <div className="w-full mt-3 h-2 bg-parchment-75 rounded-full overflow-hidden">
+          <div className="w-full mt-3 h-2 bg-parchment-300 rounded-full overflow-hidden">
             <div
-              className="h-full bg-rust transition-all duration-300 ease-in-out"
+              className="h-full bg-forest transition-all duration-300 ease-in-out"
               style={{ width: `${progress}%` }}
             />
           </div>
-          <p className="text-sm text-ink/45 mt-2 font-sans">{currentStep + 1}/6</p>
+          <p className="text-sm text-ink/40 mt-2 font-sans">{currentStep + 1}/6</p>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="min-h-[300px]">{renderStep()}</div>
 
-          <div className="flex justify-between items-center mt-8 pt-6 border-t border-parchment-75">
+          <div className="flex justify-between items-center mt-8 pt-6 border-t border-parchment-300">
             <Button
               type="button"
               variant="ghost"
               onClick={handlePrevious}
               disabled={currentStep === 0}
-              className="flex items-center text-ink/60 hover:text-ink font-sans"
+              className="flex items-center text-ink/50 hover:text-ink font-sans"
             >
               <ChevronLeft className="w-4 h-4 mr-1" />
               Anterior
@@ -551,7 +551,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
               <Button
                 type="submit"
                 disabled={!canProceed()}
-                className="bg-rust hover:bg-clay text-white font-semibold font-sans px-6 py-2 rounded-md"
+                className="bg-forest hover:bg-forest-deep text-white font-semibold font-sans px-6 py-2 rounded-lg"
               >
                 Finalizar
               </Button>
@@ -560,7 +560,7 @@ export function SurveyModal({ isOpen, onClose, onComplete }: SurveyModalProps) {
                 type="button"
                 onClick={handleNext}
                 disabled={!canProceed()}
-                className="flex items-center bg-rust hover:bg-clay text-white font-semibold font-sans px-6 py-2 rounded-md"
+                className="flex items-center bg-forest hover:bg-forest-deep text-white font-semibold font-sans px-6 py-2 rounded-lg"
               >
                 Próximo
                 <ChevronRight className="w-4 h-4 ml-1" />
